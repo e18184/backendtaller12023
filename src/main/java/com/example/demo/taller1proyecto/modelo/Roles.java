@@ -9,23 +9,20 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Data
 @Entity
-public class Menus implements Serializable {
+public class Roles implements Serializable {
     @Id
-    @Column(name = "codm")
-    @GeneratedValue(generator = "MENUS_CODM")
-
-    Integer codm;
+    @Column(name = "codr")
+    @GeneratedValue(generator = "ROLES_CODR")
+    Integer codr;
     @Column(name = "nombre", length = 30)
     String nombre;
     Integer estado;
     @ManyToMany
-    Set<Procesos> procesos = new HashSet<Procesos>();
-    @ManyToMany
-    Set<Roles> roles = new HashSet<Roles>();
+    Set<Menus> menus = new HashSet<Menus>();
 
 }
