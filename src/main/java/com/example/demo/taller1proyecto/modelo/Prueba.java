@@ -1,15 +1,12 @@
 package com.example.demo.taller1proyecto.modelo;
 
+// com.example.demo.taller1proyecto.
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,10 +22,10 @@ import lombok.Setter;
 @Entity
 // serializable persistan y se envien cookies
 // utiliza para sesionar
-public class Procesos implements Serializable {
+public class Prueba implements Serializable {
     @Id
     @Column(name = "codp")
-    @GeneratedValue(generator = "PROCESOS_CODP")
+    @GeneratedValue(generator = "PRUEBA_CODP")
     Integer codp;
     @Column(name = "nombre", length = 30)
     String nombre;
@@ -38,7 +35,4 @@ public class Procesos implements Serializable {
     String ayuda;
     @Column(name = "estado")
     Integer estado;
-    @ManyToMany
-    Set<Menus> menus = new HashSet<Menus>();
-
 }
