@@ -11,6 +11,8 @@ import lombok.*;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Persona implements Serializable {
     @Id
     @Column(name = "codu")
