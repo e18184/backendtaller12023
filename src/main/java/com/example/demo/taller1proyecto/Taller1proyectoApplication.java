@@ -2,10 +2,11 @@ package com.example.demo.taller1proyecto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import com.example.demo.taller1proyecto.modelo.Persona;
-import com.example.demo.taller1proyecto.modelo.Usuarios;
-import com.example.demo.taller1proyecto.service.PersonaService;
-import com.example.demo.taller1proyecto.service.UsuariosService;
+import com.example.demo.taller1proyecto.modelo.*;
+import com.example.demo.taller1proyecto.service.*;
+
+import java.util.Set;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
@@ -17,7 +18,8 @@ public class Taller1proyectoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(PersonaService personaService, UsuariosService usuariosService
+	public CommandLineRunner demo(PersonaService personaService, UsuariosService usuariosService,
+			ProcesosService procesosService
 
 	) {
 		return (args) -> {
@@ -64,6 +66,19 @@ public class Taller1proyectoApplication {
 
 			usuariosService.save(usuario1);
 			usuariosService.save(usuario2);
+
+			Procesos procesos1 = new Procesos();
+			// como relacionar un procesos con varios menus
+			/*
+			 * 1ra forma Set<Menus> listamenus = new HastSet<Menus>();
+			 * listamenus.add(menu1); listamenus.add(menu2); procesos1.setMenus(listamenus);
+			 */
+			/*
+			 * 2da forma procesos1.setMenus(Set<Menus>.of(menu1,menu2,menu3));
+			 * 
+			 */
+
+			procesosService.save(procesos1);
 
 			// fetch all person
 			System.out.println("-----List of Persons------");
