@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.example.demo.taller1proyecto.modelo.Persona;
 import com.example.demo.taller1proyecto.modelo.Usuarios;
 import com.example.demo.taller1proyecto.service.PersonaService;
+import com.example.demo.taller1proyecto.service.UsuariosService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
@@ -16,7 +17,9 @@ public class Taller1proyectoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(PersonaService personaService) {
+	public CommandLineRunner demo(PersonaService personaService, UsuariosService usuariosService
+
+	) {
 		return (args) -> {
 			// save few person
 
@@ -58,6 +61,9 @@ public class Taller1proyectoApplication {
 
 			person1.setUsuarios(usuario1);
 			usuario1.setPersona(person1);
+
+			usuariosService.save(usuario1);
+			usuariosService.save(usuario2);
 
 			// fetch all person
 			System.out.println("-----List of Persons------");
