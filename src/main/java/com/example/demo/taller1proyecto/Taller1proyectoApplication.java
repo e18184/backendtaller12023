@@ -19,7 +19,7 @@ public class Taller1proyectoApplication {
 
 	@Bean
 	public CommandLineRunner demo(PersonaService personaService, UsuariosService usuariosService,
-			ProcesosService procesosService
+			ProcesosService procesosService, MenusService menusService
 
 	) {
 		return (args) -> {
@@ -67,7 +67,23 @@ public class Taller1proyectoApplication {
 			usuariosService.save(usuario1);
 			usuariosService.save(usuario2);
 
-			Procesos procesos1 = new Procesos();
+			// Procesos procesos1 = new Procesos();
+			Procesos procesos1 = new Procesos(null, "Proceso1", "index", "sin ayuda", 1, null);
+			Procesos procesos2 = new Procesos(null, "Proceso2", "index", "sin ayuda", 1, null);
+			Procesos procesos3 = new Procesos(null, "Proceso3", "index", "sin ayuda", 1, null);
+
+			Menus menus1 = new Menus(null, "menu1", 1, null, null);
+			Menus menus2 = new Menus(null, "menu2", 1, null, null);
+			Menus menus3 = new Menus(null, "menu3", 1, null, null);
+			Menus menus4 = new Menus(null, "menu4", 1, null, null);
+			Menus menus5 = new Menus(null, "menu5", 1, null, null);
+			Menus menus6 = new Menus(null, "menu6", 1, null, null);
+
+			/*
+			 * procesos1.setMenus(Set.of(menus1, menus2)); procesos2.setMenus(Set.of(menus3,
+			 * menus4)); procesos3.setMenus(Set.of(menus5, menus6));
+			 */
+
 			// como relacionar un procesos con varios menus
 			/*
 			 * 1ra forma Set<Menus> listamenus = new HastSet<Menus>();
@@ -78,7 +94,20 @@ public class Taller1proyectoApplication {
 			 * 
 			 */
 
+			procesos1.setMenus(Set.of(menus1, menus2));
+			procesos2.setMenus(Set.of(menus3, menus4));
+			procesos3.setMenus(Set.of(menus5, menus6));
+
 			procesosService.save(procesos1);
+			procesosService.save(procesos2);
+			procesosService.save(procesos3);
+
+			menusService.save(menus1);
+			menusService.save(menus2);
+			menusService.save(menus3);
+			menusService.save(menus4);
+			menusService.save(menus5);
+			menusService.save(menus6);
 
 			// fetch all person
 			System.out.println("-----List of Persons------");

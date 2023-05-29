@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-import com.example.demo.taller1proyecto.modelo.Persona;
 import com.example.demo.taller1proyecto.modelo.Procesos;
 
 @Service
