@@ -19,7 +19,7 @@ public class Taller1proyectoApplication {
 
 	@Bean
 	public CommandLineRunner demo(PersonaService personaService, UsuariosService usuariosService,
-			ProcesosService procesosService, MenusService menusService
+			ProcesosService procesosService, MenusService menusService , RolesService rolesService
 
 	) {
 		return (args) -> {
@@ -106,8 +106,33 @@ public class Taller1proyectoApplication {
 			procesos3.setMenus(Set.of(menus5, menus6));
 			procesosService.save(procesos3);
 
+			Roles rol1 = new Roles();
+			rol1.setNombre("estudiante");
+
+
+			rol1.setCodr(1);
+			//rolesService.save(rol1);
+
+			rol1.setMenus(Set.of(menus1, menus2, menus3));
+			rol1.setUsuarios(Set.of(usuario1,usuario2));
+			rolesService.save(rol1);
+
+			Roles rol2 = new Roles();
+			rol2.setNombre("docente");
+	
+			rol2.setCodr(1);
+
+			
+			rol2.setMenus(Set.of(menus5, menus3, menus4));
+			rol2.setUsuarios(Set.of(usuario1,usuario2));
+			rolesService.save(rol2);
+
+
+			
+
 			// fetch all person
 			System.out.println("-----List of Persons------");
+
 			for (Persona person : personaService.getPersonaList()) {
 				System.out.println("Person Detail:" + person);
 			}
