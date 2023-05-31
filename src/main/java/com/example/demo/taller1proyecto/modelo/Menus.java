@@ -11,10 +11,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 public class Menus implements Serializable {
     @Id
     @Column(name = "codm")
