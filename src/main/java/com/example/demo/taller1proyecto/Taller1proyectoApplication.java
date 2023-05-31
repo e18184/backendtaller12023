@@ -73,12 +73,17 @@ public class Taller1proyectoApplication {
 			Procesos procesos3 = new Procesos(null, "Proceso3", "index", "sin ayuda", 1, null);
 
 			Menus menus1 = new Menus(null, "menu1", 1, null, null);
+			menusService.save(menus1);
 			Menus menus2 = new Menus(null, "menu2", 1, null, null);
+			menusService.save(menus2);
 			Menus menus3 = new Menus(null, "menu3", 1, null, null);
+			menusService.save(menus3);
 			Menus menus4 = new Menus(null, "menu4", 1, null, null);
+			menusService.save(menus4);
 			Menus menus5 = new Menus(null, "menu5", 1, null, null);
+			menusService.save(menus5);
 			Menus menus6 = new Menus(null, "menu6", 1, null, null);
-
+			menusService.save(menus6);
 			/*
 			 * procesos1.setMenus(Set.of(menus1, menus2)); procesos2.setMenus(Set.of(menus3,
 			 * menus4)); procesos3.setMenus(Set.of(menus5, menus6));
@@ -95,19 +100,11 @@ public class Taller1proyectoApplication {
 			 */
 
 			procesos1.setMenus(Set.of(menus1, menus2));
-			procesos2.setMenus(Set.of(menus3, menus4));
-			procesos3.setMenus(Set.of(menus5, menus6));
-
 			procesosService.save(procesos1);
+			procesos2.setMenus(Set.of(menus3, menus4));
 			procesosService.save(procesos2);
+			procesos3.setMenus(Set.of(menus5, menus6));
 			procesosService.save(procesos3);
-
-			menusService.save(menus1);
-			menusService.save(menus2);
-			menusService.save(menus3);
-			menusService.save(menus4);
-			menusService.save(menus5);
-			menusService.save(menus6);
 
 			// fetch all person
 			System.out.println("-----List of Persons------");
