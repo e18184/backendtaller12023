@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,16 +17,18 @@ import java.util.Set;
 
 @Data
 @AllArgsConstructor
-@Entity
+
 @NoArgsConstructor
+@Entity
+@Table(name = "t_usuarios")
 public class Usuarios implements Serializable {
     @Id
     @Column(name = "codu")
-    @GeneratedValue(generator = "USUARIO_CODR")
+    @GeneratedValue(generator = "USUARIO_CODU")
     Integer id;
-    @Column(name = "nombre", length = 30)
+    @Column(name = "login", length = 30)
     String login;
-    @Column(name = "passsword", length = 30)
+    @Column(name = "password", length = 30)
     String password;
     Integer estado;
     @ManyToMany

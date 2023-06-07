@@ -9,14 +9,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "t_menus")
 public class Menus implements Serializable {
     @Id
     @Column(name = "codm")

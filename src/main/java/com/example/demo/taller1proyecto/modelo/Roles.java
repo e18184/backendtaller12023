@@ -7,13 +7,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.persistence.ManyToMany;
 
 import lombok.Data;
 
 @Data
 @Entity
-
+@Table(name = "t_roles")
 public class Roles implements Serializable {
     @Id
     @Column(name = "codr")

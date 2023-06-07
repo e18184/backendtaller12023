@@ -18,7 +18,20 @@ public class UsuariosServiceImpl implements UsuariosService {
 
     @Override
     public List<Usuarios> getUsuariosList() {
+
         return usuariosRepo.findAll();
     }
 
+    public boolean usuariosFindById(Long id) {
+
+        return usuariosRepo.findById(id).isPresent();
+    }
+
+    public List<Usuarios> getUsuariosLoginPasswordSql(String login, String password) {
+        return usuariosRepo.getUsuariosLoginPasswordSql(login, password);
+    }
+
+    public List<Usuarios> getUsuariosLoginPasswordJpql(String login, String password){
+        return usuariosRepo.getUsuariosLoginPasswordJpql(login, password)
+    }
 }

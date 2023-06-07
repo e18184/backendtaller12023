@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ import lombok.Setter;
 @Entity
 // serializable persistan y se envien cookies
 // utiliza para sesionar
+@Table(name = "t_procesos")
 public class Procesos implements Serializable {
     @Id
     @Column(name = "codp")

@@ -19,7 +19,7 @@ public class Taller1proyectoApplication {
 
 	@Bean
 	public CommandLineRunner demo(PersonaService personaService, UsuariosService usuariosService,
-			ProcesosService procesosService, MenusService menusService , RolesService rolesService
+			ProcesosService procesosService, MenusService menusService, RolesService rolesService
 
 	) {
 		return (args) -> {
@@ -54,8 +54,8 @@ public class Taller1proyectoApplication {
 			usuario1.setEstado(1);
 
 			Usuarios usuario2 = new Usuarios();
-			usuario2.setLogin("uno");
-			usuario2.setPassword("uno");
+			usuario2.setLogin("dos");
+			usuario2.setPassword("dos");
 			usuario2.setEstado(1);
 
 			person2.setUsuarios(usuario2);
@@ -109,33 +109,54 @@ public class Taller1proyectoApplication {
 			Roles rol1 = new Roles();
 			rol1.setNombre("estudiante");
 
-
 			rol1.setCodr(1);
-			//rolesService.save(rol1);
+			// rolesService.save(rol1);
 
 			rol1.setMenus(Set.of(menus1, menus2, menus3));
-			rol1.setUsuarios(Set.of(usuario1,usuario2));
+			rol1.setUsuarios(Set.of(usuario1, usuario2));
 			rolesService.save(rol1);
 
 			Roles rol2 = new Roles();
 			rol2.setNombre("docente");
-	
+
 			rol2.setCodr(1);
 
-			
 			rol2.setMenus(Set.of(menus5, menus3, menus4));
-			rol2.setUsuarios(Set.of(usuario1,usuario2));
+			rol2.setUsuarios(Set.of(usuario1, usuario2));
 			rolesService.save(rol2);
 
+			/*
+			 * Usuarios usuario3 = new Usuarios(); usuario3.setLogin("sdfsafd");
+			 * usuario3.setPassword("dsfasd"); usuario3.setEstado(0);
+			 */
+			try {
 
-			
+				if (usuariosService.usuariosFindById(Long.valueOf(usuario2.getId()))) {
+					System.out.println("existe el usuario");
 
-			// fetch all person
-			System.out.println("-----List of Persons------");
-
-			for (Persona person : personaService.getPersonaList()) {
-				System.out.println("Person Detail:" + person);
+				} else {
+					System.out.println("NO EXISTE EL USUARIO");
+				}
+			} catch (Exception e) {
+				System.out.println("NO EXISTE EL USUARIO");
 			}
+
+			/*
+			 * fetch all person System.out.println("-----List of Persons------");
+			 * 
+			 * for (Persona person : personaService.getPersonaList()) {
+			 * System.out.println("Person Detail:" + person); }
+			 */
+			System.out.println("repository sql ");
+			for (Usuarios usuarios : usuariosService.getUsuariosLoginPasswordSql("uno", "uno")) {
+				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
+			}
+
+			System.out.println("repository Jpsql ");
+			for (Usuarios usuarios : usuariosService.getUsuariosLoginPasswordJpql("uno", "uno")) {
+				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
+			}
+
 		};
 	}
 

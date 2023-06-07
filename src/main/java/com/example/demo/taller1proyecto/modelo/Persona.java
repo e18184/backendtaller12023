@@ -5,14 +5,17 @@ import java.util.Date;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Column;
+import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Entity;
 import lombok.*;
 
 @Data
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "t_persona")
 public class Persona implements Serializable {
     @Id
     @Column(name = "codu")
