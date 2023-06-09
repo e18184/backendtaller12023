@@ -55,7 +55,7 @@ public class Taller1proyectoApplication {
 			usuario1.setEstado(1);
 
 			Usuarios usuario2 = new Usuarios();
-			usuario2.setLogin("uno");
+			usuario2.setLogin("dos");
 			usuario2.setPassword("dos");
 			usuario2.setEstado(1);
 
@@ -159,6 +159,14 @@ public class Taller1proyectoApplication {
 
 			System.out.println("repository Jpsql ");
 			for (Usuarios usuarios : usuariosService.getUsuariosLoginPasswordJpql("uno", "uno")) {
+				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
+
+			}
+
+			// findByLoginAndPassword
+			System.out
+					.println("repository public List<Usuarios> findByLoginAndPassword(String login, String password);");
+			for (Usuarios usuarios : usuariosService.findByLoginAndPassword("uno", "uno")) {
 				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
 
 			}
