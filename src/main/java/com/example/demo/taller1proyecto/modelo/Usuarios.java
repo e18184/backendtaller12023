@@ -26,7 +26,7 @@ public class Usuarios implements Serializable {
     @Column(name = "codu")
     @GeneratedValue(generator = "USUARIO_CODU")
     Integer id;
-    @Column(name = "login", length = 30)
+    @Column(name = "login", length = 30, unique = true)
     String login;
     @Column(name = "password", length = 30)
     String password;

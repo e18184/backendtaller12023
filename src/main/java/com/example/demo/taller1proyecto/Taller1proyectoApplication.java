@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.example.demo.taller1proyecto.modelo.*;
 import com.example.demo.taller1proyecto.service.*;
 
+import java.sql.*;
 import java.util.Set;
 
 import org.springframework.boot.CommandLineRunner;
@@ -54,7 +55,7 @@ public class Taller1proyectoApplication {
 			usuario1.setEstado(1);
 
 			Usuarios usuario2 = new Usuarios();
-			usuario2.setLogin("dos");
+			usuario2.setLogin("uno");
 			usuario2.setPassword("dos");
 			usuario2.setEstado(1);
 
@@ -63,9 +64,13 @@ public class Taller1proyectoApplication {
 
 			person1.setUsuarios(usuario1);
 			usuario1.setPersona(person1);
+			try {
+				usuariosService.save(usuario1);
+				usuariosService.save(usuario2);
+			} catch (Exception e) {
+				System.out.println("Se duplico el login");
 
-			usuariosService.save(usuario1);
-			usuariosService.save(usuario2);
+			}
 
 			// Procesos procesos1 = new Procesos();
 			Procesos procesos1 = new Procesos(null, "Proceso1", "index", "sin ayuda", 1, null);
@@ -155,6 +160,7 @@ public class Taller1proyectoApplication {
 			System.out.println("repository Jpsql ");
 			for (Usuarios usuarios : usuariosService.getUsuariosLoginPasswordJpql("uno", "uno")) {
 				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
+
 			}
 
 		};

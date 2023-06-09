@@ -15,4 +15,5 @@ public interface UsuariosService {
     List<Usuarios> getUsuariosLoginPasswordSql(String login, String password);
 
     public List<Usuarios> getUsuariosLoginPasswordJpql(String login, String password);
+
 }

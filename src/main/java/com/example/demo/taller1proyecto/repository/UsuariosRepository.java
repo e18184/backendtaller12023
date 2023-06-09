@@ -15,11 +15,16 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
     // @Query("select max(u.id) from usuarios u ")
     // hay con parametros....
     // consulta SQL
+    // lo que hacemos en el pgadmin
     @Query(value = "select codu, login, password, estado,persona_codu from t_usuarios u where u.login=?1 and u.password=?2", nativeQuery = true)
     public List<Usuarios> getUsuariosLoginPasswordSql(String login, String password);
 
     // consulta JPQL
-    @Query("select codu, login, password, estado from Usuarios where login=?1 and password=?2")
+    // clases.
+
+    @Query("select u from Usuarios u where u.login=?1 and u.password=?2")
     public List<Usuarios> getUsuariosLoginPasswordJpql(String login, String password);
+
+    public List<Usuarios> findByLogin(String login);
 
 }

@@ -31,7 +31,8 @@ public class UsuariosServiceImpl implements UsuariosService {
         return usuariosRepo.getUsuariosLoginPasswordSql(login, password);
     }
 
-    public List<Usuarios> getUsuariosLoginPasswordJpql(String login, String password){
-        return usuariosRepo.getUsuariosLoginPasswordJpql(login, password)
+    public List<Usuarios> getUsuariosLoginPasswordJpql(String login, String password) {
+        return usuariosRepo.getUsuariosLoginPasswordJpql(login, password);
     }
+
 }
