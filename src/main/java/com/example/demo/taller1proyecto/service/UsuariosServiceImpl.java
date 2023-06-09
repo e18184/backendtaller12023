@@ -39,4 +39,9 @@ public class UsuariosServiceImpl implements UsuariosService {
         return usuariosRepo.findByLoginAndPassword(login, password);
     }
 
+    public List<Usuarios> findByLoginLike(String login) {
+        return usuariosRepo.findByLoginLike(login);
+
+    }
+
 }

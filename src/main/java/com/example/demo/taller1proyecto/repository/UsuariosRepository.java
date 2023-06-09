@@ -34,6 +34,7 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
     // True, False,IgnoreCase
     public List<Usuarios> findByLoginAndPassword(String login, String password);
 
-    public List<Usuarios> findByLogin(String login);
+    // public List<Usuarios> findByLogin(String login);
+    public List<Usuarios> findByLoginLike(String login);
 
 }

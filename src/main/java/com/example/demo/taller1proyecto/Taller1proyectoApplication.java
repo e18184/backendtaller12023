@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.example.demo.taller1proyecto.modelo.*;
 import com.example.demo.taller1proyecto.service.*;
 
-import java.sql.*;
 import java.util.Set;
 
 import org.springframework.boot.CommandLineRunner;
@@ -167,6 +166,12 @@ public class Taller1proyectoApplication {
 			System.out
 					.println("repository public List<Usuarios> findByLoginAndPassword(String login, String password);");
 			for (Usuarios usuarios : usuariosService.findByLoginAndPassword("uno", "uno")) {
+				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
+
+			}
+			// findByLoginLike
+			System.out.println("repository public List<Usuarios> findByLoginLike(String login);");
+			for (Usuarios usuarios : usuariosService.findByLoginLike("%o%")) {
 				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
 
 			}

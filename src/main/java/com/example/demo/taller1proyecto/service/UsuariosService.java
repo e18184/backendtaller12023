@@ -18,4 +18,5 @@ public interface UsuariosService {
 
     public List<Usuarios> findByLoginAndPassword(String login, String password);
 
+    public List<Usuarios> findByLoginLike(String login);
 }
