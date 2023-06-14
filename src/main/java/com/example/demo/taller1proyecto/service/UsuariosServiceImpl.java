@@ -44,4 +44,8 @@ public class UsuariosServiceImpl implements UsuariosService {
 
     }
 
+    public List<Usuarios> findById(Integer id) {
+        return usuariosRepo.findById(id);
+    }
+
 }

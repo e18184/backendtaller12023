@@ -6,6 +6,7 @@ import com.example.demo.taller1proyecto.modelo.*;
 import com.example.demo.taller1proyecto.service.*;
 
 import java.util.Set;
+import java.util.List;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -49,6 +50,7 @@ public class Taller1proyectoApplication {
 
 			// llenar un usuario
 			Usuarios usuario1 = new Usuarios();
+
 			usuario1.setLogin("uno");
 			usuario1.setPassword("uno");
 			usuario1.setEstado(1);
@@ -117,7 +119,7 @@ public class Taller1proyectoApplication {
 			// rolesService.save(rol1);
 
 			rol1.setMenus(Set.of(menus1, menus2, menus3));
-			rol1.setUsuarios(Set.of(usuario1, usuario2));
+			// rol1.setUsuarios(Set.of(usuario1, usuario2));
 			rolesService.save(rol1);
 
 			Roles rol2 = new Roles();
@@ -126,7 +128,7 @@ public class Taller1proyectoApplication {
 			rol2.setCodr(1);
 
 			rol2.setMenus(Set.of(menus5, menus3, menus4));
-			rol2.setUsuarios(Set.of(usuario1, usuario2));
+			// rol2.setUsuarios(Set.of(usuario1, usuario2));
 			rolesService.save(rol2);
 
 			/*
@@ -151,30 +153,58 @@ public class Taller1proyectoApplication {
 			 * for (Persona person : personaService.getPersonaList()) {
 			 * System.out.println("Person Detail:" + person); }
 			 */
-			System.out.println("repository sql ");
-			for (Usuarios usuarios : usuariosService.getUsuariosLoginPasswordSql("uno", "uno")) {
-				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
-			}
 
-			System.out.println("repository Jpsql ");
-			for (Usuarios usuarios : usuariosService.getUsuariosLoginPasswordJpql("uno", "uno")) {
-				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
+			/* vamos hacer las relaciones de usuario a rol */
 
-			}
+			List<Usuarios> pusu = usuariosService.findById(usuario1.getId());
+			pusu.get(0).setRoles(Set.of(rol1, rol2));
+			usuario1 = pusu.get(0);
+			usuariosService.save(usuario1);
+
+			/*
+			 * usuario1 = usuariosService.findById(usuario1.getId()).get(0);
+			 * usuario1.setRoles(Set.of(rol1, rol2));
+			 */
+			/*
+			 * usuario2 = usuariosService.findById(usuario2.getId()).get(0);
+			 * usuario2.setRoles(Set.of(rol1, rol2)); usuariosService.save(usuario1);
+			 */
+			// usuariosService.save(usuario1);
+
+			/*
+			 * System.out.println("repository sql "); for (Usuarios usuarios :
+			 * usuariosService.getUsuariosLoginPasswordSql("uno", "uno")) {
+			 * System.out.println(usuarios.getLogin() + " " + usuarios.getPassword()); }
+			 * 
+			 * System.out.println("repository Jpsql "); for (Usuarios usuarios :
+			 * usuariosService.getUsuariosLoginPasswordJpql("uno", "uno")) {
+			 * System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
+			 * 
+			 * }
+			 */
 
 			// findByLoginAndPassword
 			System.out
 					.println("repository public List<Usuarios> findByLoginAndPassword(String login, String password);");
 			for (Usuarios usuarios : usuariosService.findByLoginAndPassword("uno", "uno")) {
-				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
+				System.out.println(
+						usuarios.getPersona().getNombre() + " " + usuarios.getLogin() + " " + usuarios.getPassword());
+
+				for (Roles r : usuarios.getRoles()) {
+					System.out.println("rol es" + r.getNombre().toString());
+				}
 
 			}
-			// findByLoginLike
-			System.out.println("repository public List<Usuarios> findByLoginLike(String login);");
-			for (Usuarios usuarios : usuariosService.findByLoginLike("%o%")) {
-				System.out.println(usuarios.getLogin() + " " + usuarios.getPassword());
-
-			}
+			/*
+			 * // findByLoginLike System.out.
+			 * println("repository public List<Usuarios> findByLoginLike(String login);");
+			 * for (Usuarios usuarios : usuariosService.findByLoginLike("%o%")) {
+			 * System.out.println(usuarios.getPersona().getNombre() + " " +
+			 * usuarios.getPersona().getAp() + " " + usuarios.getLogin() + " " +
+			 * usuarios.getPassword());
+			 * 
+			 * }
+			 */
 
 		};
 	}

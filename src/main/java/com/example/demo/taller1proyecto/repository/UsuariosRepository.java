@@ -37,4 +37,7 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
     // public List<Usuarios> findByLogin(String login);
     public List<Usuarios> findByLoginLike(String login);
 
+    // necesitamos un metodo que me devuelva el objeto
+    public List<Usuarios> findById(Integer id);
+
 }

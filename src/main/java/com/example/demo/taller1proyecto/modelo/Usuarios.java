@@ -15,25 +15,26 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
 @AllArgsConstructor
 
 @NoArgsConstructor
 @Entity
 @Table(name = "t_usuarios")
+@Data
 public class Usuarios implements Serializable {
-    @Id
-    @Column(name = "codu")
-    @GeneratedValue(generator = "USUARIO_CODU")
-    Integer id;
-    @Column(name = "login", length = 30, unique = true)
-    String login;
-    @Column(name = "password", length = 30)
-    String password;
-    Integer estado;
-    @ManyToMany
-    Set<Roles> roles = new HashSet<Roles>();
-    @OneToOne
-    Persona persona;
+        @Id
+        @Column(name = "codu")
+        @GeneratedValue(generator = "USUARIO_CODU")
+        Integer id;
+        @Column(name = "login", length = 30, unique = true)
+        String login;
+        @Column(name = "password", length = 30)
+        String password;
+        Integer estado;
+
+        @ManyToMany
+        Set<Roles> roles = new HashSet<Roles>();
+        @OneToOne
+        Persona persona;
 
 }
