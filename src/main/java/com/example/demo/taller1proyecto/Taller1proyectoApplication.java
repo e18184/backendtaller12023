@@ -26,52 +26,25 @@ public class Taller1proyectoApplication {
 		return (args) -> {
 			// save few person
 
-			Persona person1 = new Persona();
+			Persona person1 = new Persona(null, "4143805", "Richard", "Cota", "Perez", 1, null, "casado", "M",
+					"Barrio Morros Blancos", "5916649145", null, null, null);
 
-			person1.setNombre("Richard");
-			person1.setAm("perez");
-			person1.setAp("Cota");
-			person1.setCedula("4143805");
-			person1.setEcivil("casado");
-			person1.setEstado(1);
-			person1.setFoto("sin foto");
-
-			Persona person2 = new Persona();
-			person2.setNombre("Ronald");
-			person2.setAm("perez");
-			person2.setAp("Cota");
-			person2.setCedula("4143810");
-			person2.setEcivil("soltero");
-			person2.setEstado(1);
-			person2.setFoto("sin foto");
+			Persona person2 = new Persona(null, "4143805", "Ronald", "Cota", "Perez", 1, null, "casado", "M",
+					"Barrio Morros Blancos", "5916649145", null, null, null);
 
 			personaService.save(person1);
 			personaService.save(person2);
 
 			// llenar un usuario
-			Usuarios usuario1 = new Usuarios();
-
-			usuario1.setLogin("uno");
-			usuario1.setPassword("uno");
-			usuario1.setEstado(1);
-
-			Usuarios usuario2 = new Usuarios();
-			usuario2.setLogin("dos");
-			usuario2.setPassword("dos");
-			usuario2.setEstado(1);
-
+			Usuarios usuario1 = new Usuarios(null, "uno", "uno", 1, null, person1);
+			Usuarios usuario2 = new Usuarios(null, "dos", "dos", 1, null, person2);
+			person1.setUsuarios(usuario1);
+			usuario1.setPersona(person1);
 			person2.setUsuarios(usuario2);
 			usuario2.setPersona(person2);
 
-			person1.setUsuarios(usuario1);
-			usuario1.setPersona(person1);
-			try {
-				usuariosService.save(usuario1);
-				usuariosService.save(usuario2);
-			} catch (Exception e) {
-				System.out.println("Se duplico el login");
-
-			}
+			usuariosService.save(usuario1);
+			usuariosService.save(usuario2);
 
 			// Procesos procesos1 = new Procesos();
 			Procesos procesos1 = new Procesos(null, "Proceso1", "index", "sin ayuda", 1, null);
@@ -114,8 +87,6 @@ public class Taller1proyectoApplication {
 
 			Roles rol1 = new Roles();
 			rol1.setNombre("estudiante");
-
-			rol1.setCodr(1);
 			// rolesService.save(rol1);
 
 			rol1.setMenus(Set.of(menus1, menus2, menus3));
@@ -124,8 +95,6 @@ public class Taller1proyectoApplication {
 
 			Roles rol2 = new Roles();
 			rol2.setNombre("docente");
-
-			rol2.setCodr(1);
 
 			rol2.setMenus(Set.of(menus5, menus3, menus4));
 			// rol2.setUsuarios(Set.of(usuario1, usuario2));
@@ -156,20 +125,18 @@ public class Taller1proyectoApplication {
 
 			/* vamos hacer las relaciones de usuario a rol */
 
-			List<Usuarios> pusu = usuariosService.findById(usuario1.getId());
-			pusu.get(0).setRoles(Set.of(rol1, rol2));
-			usuario1 = pusu.get(0);
-			usuariosService.save(usuario1);
+			/*
+			 * List<Usuarios> pusu = usuariosService.findById(usuario1.getId());
+			 * pusu.get(0).setRoles(Set.of(rol1, rol2)); usuario1 = pusu.get(0);
+			 * usuariosService.save(usuario1);
+			 */
 
-			/*
-			 * usuario1 = usuariosService.findById(usuario1.getId()).get(0);
-			 * usuario1.setRoles(Set.of(rol1, rol2));
-			 */
-			/*
-			 * usuario2 = usuariosService.findById(usuario2.getId()).get(0);
-			 * usuario2.setRoles(Set.of(rol1, rol2)); usuariosService.save(usuario1);
-			 */
-			// usuariosService.save(usuario1);
+			usuario1 = usuariosService.findById(usuario1.getId()).get(0);
+			usuario1.setRoles(List.of(rol1, rol2));
+			usuariosService.save(usuario1);
+			usuario2 = usuariosService.findById(usuario2.getId()).get(0);
+			usuario2.setRoles(List.of(rol1, rol2));
+			usuariosService.save(usuario2);
 
 			/*
 			 * System.out.println("repository sql "); for (Usuarios usuarios :
@@ -190,8 +157,12 @@ public class Taller1proyectoApplication {
 				System.out.println(
 						usuarios.getPersona().getNombre() + " " + usuarios.getLogin() + " " + usuarios.getPassword());
 
-				for (Roles r : usuarios.getRoles()) {
-					System.out.println("rol es" + r.getNombre().toString());
+				if (usuarios.getRoles() != null) {
+					usuarios.getRoles().forEach(r -> System.out.println("rol es" + r.getNombre().toString()));
+					/*
+					 * for (Roles r : usuarios.getRoles()) { System.out.println("rol es" +
+					 * r.getNombre().toString()); }
+					 */
 				}
 
 			}
