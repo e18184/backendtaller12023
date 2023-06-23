@@ -89,14 +89,14 @@ public class Taller1proyectoApplication {
 			rol1.setNombre("estudiante");
 			// rolesService.save(rol1);
 
-			rol1.setMenus(Set.of(menus1, menus2, menus3));
+			rol1.setMenus(List.of(menus1, menus2, menus3));
 			// rol1.setUsuarios(Set.of(usuario1, usuario2));
 			rolesService.save(rol1);
 
 			Roles rol2 = new Roles();
 			rol2.setNombre("docente");
 
-			rol2.setMenus(Set.of(menus5, menus3, menus4));
+			rol2.setMenus(List.of(menus5, menus3, menus4));
 			// rol2.setUsuarios(Set.of(usuario1, usuario2));
 			rolesService.save(rol2);
 
@@ -173,7 +173,15 @@ public class Taller1proyectoApplication {
 						usuarios.getPersona().getNombre() + " " + usuarios.getLogin() + " " + usuarios.getPassword());
 
 				if (usuarios.getRoles() != null) {
-					usuarios.getRoles().forEach(r -> System.out.println("rol es" + r.getNombre().toString()));
+					for (Roles roless : usuarios.getRoles()) {
+						System.out.println(roless.getNombre());
+						if (roless.getMenus() != null) {
+							roless.getMenus().forEach(m -> System.out.println(m.getNombre()));
+						}
+
+					}
+					// usuarios.etRoles().forEach(r -> System.out.println("rol es" +
+					// r.getNombre().toString()));
 					/*
 					 * for (Roles r : usuarios.getRoles()) { System.out.println("rol es" +
 					 * r.getNombre().toString()); }
@@ -204,6 +212,21 @@ public class Taller1proyectoApplication {
 			/*
 			 * jose docente, crear evaluacion docente, listar designacion
 			 */
+			// findBy
+			System.out.println("listar todos los usuarios con sus respectivos roles");
+			for (Usuarios usuarios : usuariosService.getUsuariosList()) {
+				System.out.println(
+						usuarios.getPersona().getNombre() + " " + usuarios.getLogin() + " " + usuarios.getPassword());
+
+				if (usuarios.getRoles() != null) {
+					usuarios.getRoles().forEach(r -> System.out.println("rol es" + r.getNombre().toString()));
+					/*
+					 * for (Roles r : usuarios.getRoles()) { System.out.println("rol es" +
+					 * r.getNombre().toString()); }
+					 */
+				}
+
+			}
 
 		};
 	}

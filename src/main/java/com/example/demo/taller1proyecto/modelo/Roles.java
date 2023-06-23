@@ -1,14 +1,15 @@
 package com.example.demo.taller1proyecto.modelo;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+
 import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.Table;
 import jakarta.persistence.ManyToMany;
 
@@ -27,9 +28,10 @@ public class Roles implements Serializable {
 
     Integer estado;
 
-    @ManyToMany
-    Set<Menus> menus = new HashSet<Menus>();
-
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "roles_menu", joinColumns = @JoinColumn(name = "roles_id"), inverseJoinColumns = @JoinColumn(name = "menus_id"))
+    // Set<Menus> menus = new HashSet<Menus>();
+    List<Menus> menus;
     @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)
     List<Usuarios> usuarios;
 
