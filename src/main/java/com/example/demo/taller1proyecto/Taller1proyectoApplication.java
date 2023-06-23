@@ -166,6 +166,21 @@ public class Taller1proyectoApplication {
 				}
 
 			}
+			// findBy
+			System.out.println("listar todos los usuarios con sus respectivos roles");
+			for (Usuarios usuarios : usuariosService.getUsuariosList()) {
+				System.out.println(
+						usuarios.getPersona().getNombre() + " " + usuarios.getLogin() + " " + usuarios.getPassword());
+
+				if (usuarios.getRoles() != null) {
+					usuarios.getRoles().forEach(r -> System.out.println("rol es" + r.getNombre().toString()));
+					/*
+					 * for (Roles r : usuarios.getRoles()) { System.out.println("rol es" +
+					 * r.getNombre().toString()); }
+					 */
+				}
+
+			}
 			/*
 			 * // findByLoginLike System.out.
 			 * println("repository public List<Usuarios> findByLoginLike(String login);");
@@ -175,6 +190,19 @@ public class Taller1proyectoApplication {
 			 * usuarios.getPassword());
 			 * 
 			 * }
+			 */
+
+			/*
+			 * VISUALIZAR TODOS LOS MENUS, ROLES QUE TIENE DEFINIDOS TODOS LOS USUARIOS /*
+			 * nombreu,nombrer,nombrem
+			 */
+			/* ejemplo: carlos */
+			/* docente, crear evaluacion */
+			/* docente, calificar */
+			/* estudiante, ver notas */
+			/* estudiante, programacion de materia */
+			/*
+			 * jose docente, crear evaluacion docente, listar designacion
 			 */
 
 		};

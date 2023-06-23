@@ -38,6 +38,7 @@ public class Usuarios implements Serializable {
         @ManyToMany(fetch = FetchType.EAGER)
         @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuarios_id"), inverseJoinColumns = @JoinColumn(name = "roles_id"))
         List<Roles> roles;
+
         @OneToOne
         Persona persona;
 
