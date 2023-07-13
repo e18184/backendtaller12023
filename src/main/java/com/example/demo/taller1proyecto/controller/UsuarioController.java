@@ -19,6 +19,7 @@ public class UsuarioController {
     @GetMapping()
     public ResponseEntity<List<Usuarios>> findAll() {
         try {
+            // esto es una prueba
             List<Usuarios> usuario = new ArrayList<Usuarios>();
             usuarioService.findAll().forEach(usuario::add);
             return new ResponseEntity<>(usuario, HttpStatus.OK);
