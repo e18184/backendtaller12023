@@ -9,7 +9,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+<<<<<<< HEAD
 import jakarta.persistence.Table;
+=======
+>>>>>>> 505f7087c76f614141a024de8f4436c1b22bbfe8
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,12 +26,18 @@ import lombok.Setter;
 // minimo vacio
 // POJO
 @Entity
+<<<<<<< HEAD
 // serializable persistan y se envien cookies
 // utiliza para sesionar
 @Table(name = "t_procesos")
 public class Procesos implements Serializable {
     @Id
     @Column(name = "codp")
+=======
+public class Procesos implements Serializable {
+    @Id
+    @Column(name = "codm")
+>>>>>>> 505f7087c76f614141a024de8f4436c1b22bbfe8
     @GeneratedValue(generator = "PROCESOS_CODP")
     Integer codp;
     @Column(name = "nombre", length = 30)
