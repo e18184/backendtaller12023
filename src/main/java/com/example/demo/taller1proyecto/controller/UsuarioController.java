@@ -29,4 +29,14 @@ public class UsuarioController {
         }
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<List<Usuarios>> find(@PathVariable Integer id) {
+        try {
+            List<Usuarios> usuario = usuarioService.findById(id);
+            return new ResponseEntity<>(usuario, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }
