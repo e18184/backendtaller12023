@@ -20,9 +20,13 @@ public class UsuarioController {
     public ResponseEntity<List<Usuarios>> findAll() {
         try {
             // modifique
-            List<Usuarios> usuario = new ArrayList<Usuarios>();
-            usuarioService.findAll().forEach(usuario::add);
-            return new ResponseEntity<>(usuario, HttpStatus.OK);
+            List<Usuarios> usuarios = usuarioService.findAll();
+            for (Usuarios usuario : usuarios) {
+                usuario.setRoles(null);
+
+            }
+
+            return new ResponseEntity<>(usuarios, HttpStatus.OK);
 
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -32,8 +36,13 @@ public class UsuarioController {
     @GetMapping("/{id}")
     public ResponseEntity<List<Usuarios>> find(@PathVariable Integer id) {
         try {
-            List<Usuarios> usuario = usuarioService.findById(id);
-            return new ResponseEntity<>(usuario, HttpStatus.OK);
+            List<Usuarios> usuarios = usuarioService.findById(id);
+            // Iterar sobre la lista de usuarios y establecer las relaciones a null
+            for (Usuarios usuario : usuarios) {
+                usuario.setRoles(null);
+
+            }
+            return new ResponseEntity<>(usuarios, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
