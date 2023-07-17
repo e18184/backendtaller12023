@@ -23,6 +23,6 @@ public interface UsuariosService {
 
     public List<Usuarios> findById(Integer id);
 
-    public List<Usuarios> findAll();
+    public List<Usuarios> findAll(Sort sort);
 
 }

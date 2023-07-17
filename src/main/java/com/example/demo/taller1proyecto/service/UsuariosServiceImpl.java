@@ -49,8 +49,8 @@ public class UsuariosServiceImpl implements UsuariosService {
         return usuariosRepo.findById(id);
     }
 
-    public List<Usuarios> findAll() {
-        return usuariosRepo.findAll();
+    public List<Usuarios> findAll(Sort sort) {
+        return usuariosRepo.findAll(sort);
     }
 
 }

@@ -41,6 +41,6 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
     // necesitamos un metodo que me devuelva el objeto
     public List<Usuarios> findById(Integer id);
 
-    public List<Usuarios> findAll();
+    public List<Usuarios> findAll(Sort sort);
 
 }

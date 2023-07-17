@@ -47,9 +47,11 @@ public class UsuarioController {
     }
 
     @GetMapping("/dto")
-    public ResponseEntity<List<UsuarioDTO>> findByLogin() {
+    public ResponseEntity<List<UsuarioDTO>> findAll() {
         try {
-            List<Usuarios> usuarios = usuarioService.findAll();
+            Sort sort = Sort.by(Sort.Direction.ASC, "login");
+
+            List<Usuarios> usuarios = usuarioService.findAll(sort);
             List<UsuarioDTO> usuariosDTO = new ArrayList<>();
 
             for (Usuarios usuario : usuarios) {
