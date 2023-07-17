@@ -3,6 +3,7 @@ package com.example.demo.taller1proyecto.service;
 import org.springframework.stereotype.Service;
 import com.example.demo.taller1proyecto.modelo.Usuarios;
 import java.util.List;
+import org.springframework.data.domain.Sort;
 
 @Service
 public interface UsuariosService {
