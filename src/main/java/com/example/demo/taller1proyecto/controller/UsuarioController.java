@@ -7,6 +7,8 @@ import com.example.demo.taller1proyecto.service.UsuariosService;
 import org.springframework.data.domain.Sort;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.demo.taller1proyecto.dto.UsuarioDTO;
@@ -49,6 +51,18 @@ public class UsuarioController {
     @GetMapping("/dto")
     public ResponseEntity<List<UsuarioDTO>> findAll() {
         try {
+
+            // consulta en sql 
+            // SELECT
+            // u.login, u.password, p.nombre, r.nombre 
+            // FROM 
+            // t_persona p, t_usuarios u, usuarios_roles ur,
+            // t_roles r
+            // WHERE 
+            //p.codu = u.codu AND 
+            //u.codu=ur.usuarios_id 
+            //AND 
+            // ur.roles_id = r.codr;
             Sort sort = Sort.by(Sort.Direction.ASC, "login");
 
             List<Usuarios> usuarios = usuarioService.findAll(sort);
@@ -59,7 +73,13 @@ public class UsuarioController {
                 // asignando al DTO los datos
                 usuarioDTO.setLogin(usuario.getLogin());
                 usuarioDTO.setPassword(usuario.getPassword());
-                // Establece otras propiedades/columnas que deseas mostrar
+                // nombre de la persona
+                usuarioDTO.setNombre(usuario.getPersona().getNombre());
+                // rol de la persona
+                // usuarioDTO.getNombreRol(usuario.getRoles().forEach(a->);)
+                // String[] array = usuario.getRoles().stream().toArray(String[]::new);
+
+                // usuarioDTO.setNombreRol(usuario.getRoles());
 
                 usuariosDTO.add(usuarioDTO);
             }
