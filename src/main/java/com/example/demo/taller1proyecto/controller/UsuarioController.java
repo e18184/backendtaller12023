@@ -52,16 +52,16 @@ public class UsuarioController {
     public ResponseEntity<List<UsuarioDTO>> findAll() {
         try {
 
-            // consulta en sql 
+            // consulta en sql
             // SELECT
-            // u.login, u.password, p.nombre, r.nombre 
-            // FROM 
+            // u.login, u.password, p.nombre, r.nombre
+            // FROM
             // t_persona p, t_usuarios u, usuarios_roles ur,
             // t_roles r
-            // WHERE 
-            //p.codu = u.codu AND 
-            //u.codu=ur.usuarios_id 
-            //AND 
+            // WHERE
+            // p.codu = u.codu AND
+            // u.codu=ur.usuarios_id
+            // AND
             // ur.roles_id = r.codr;
             Sort sort = Sort.by(Sort.Direction.ASC, "login");
 
