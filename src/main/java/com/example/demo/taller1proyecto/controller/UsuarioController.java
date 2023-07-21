@@ -107,5 +107,8 @@ public class UsuarioController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    // realizar un metodo para devolver los roles asociados al usuario
+    // findById(Integer id)
+    // Clase Rol
 
 }
