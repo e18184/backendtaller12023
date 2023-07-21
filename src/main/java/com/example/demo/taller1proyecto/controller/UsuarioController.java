@@ -7,7 +7,7 @@ import com.example.demo.taller1proyecto.service.UsuariosService;
 import org.springframework.data.domain.Sort;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
+//import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -86,6 +86,23 @@ public class UsuarioController {
 
             return new ResponseEntity<>(usuariosDTO, HttpStatus.OK);
 
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // seleccionar un usuario en base a un login y password
+
+    @GetMapping("/{login}/{password}")
+    public ResponseEntity<List<Usuarios>> find(@PathVariable String login, @PathVariable String password) {
+        try {
+            List<Usuarios> usuarios = usuarioService.findByLoginAndPassword(login, password);
+            // Iterar sobre la lista de usuarios y establecer las relaciones a null
+            for (Usuarios usuario : usuarios) {
+                usuario.setRoles(null);
+
+            }
+            return new ResponseEntity<>(usuarios, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

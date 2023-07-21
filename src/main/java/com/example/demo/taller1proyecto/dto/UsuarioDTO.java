@@ -2,6 +2,9 @@ package com.example.demo.taller1proyecto.dto;
 
 import lombok.*;
 import java.util.List;
+
+import com.example.demo.taller1proyecto.modelo.Roles;
+
 import java.util.ArrayList;
 
 @AllArgsConstructor
@@ -14,6 +17,6 @@ public class UsuarioDTO {
     // clase Persona
     private String nombre;
     // clase Rol
-    private List nombreRol = new ArrayList();
+    private List<Roles> nombreRol = new ArrayList<>();
 
 }
