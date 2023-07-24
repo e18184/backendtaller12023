@@ -8,4 +8,5 @@ public interface RolesService {
 
     List<Roles> getRolesList();
 
+    public List<Roles> findByLoginAndPassword(String login, String password);
 }

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.demo.taller1proyecto.dto.UsuarioDTO;
+
 import com.example.demo.taller1proyecto.modelo.Usuarios;
 
 @RestController
@@ -110,5 +111,11 @@ public class UsuarioController {
     // realizar un metodo para devolver los roles asociados al usuario
     // findById(Integer id)
     // Clase Rol
+    // salida
+    // los roles que tiene un usuario
+    // ejemplo:
+    // nombre rol
+    // docente
+    // estudiante
 
 }

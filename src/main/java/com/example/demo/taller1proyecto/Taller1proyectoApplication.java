@@ -132,7 +132,7 @@ public class Taller1proyectoApplication {
 			 */
 
 			usuario1 = usuariosService.findById(usuario1.getId()).get(0);
-			usuario1.setRoles(List.of(rol1, rol2));
+			usuario1.setRoles(List.of(rol1));
 			usuariosService.save(usuario1);
 			usuario2 = usuariosService.findById(usuario2.getId()).get(0);
 			usuario2.setRoles(List.of(rol1, rol2));

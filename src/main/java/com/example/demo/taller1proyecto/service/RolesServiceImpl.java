@@ -22,4 +22,8 @@ public class RolesServiceImpl implements RolesService {
         return rolesRepo.findAll();
     }
 
+    public List<Roles> findByLoginAndPassword(String login, String password) {
+        return rolesRepo.findByLoginAndPassword(login, password);
+    }
+
 }
