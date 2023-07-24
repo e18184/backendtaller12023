@@ -23,7 +23,7 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
 
     // consulta JPQL
     // clases.
-    // 2da forma
+    // 2da forma 
 
     @Query("select u from Usuarios u where u.login=?1 and u.password=?2")
     public List<Usuarios> getUsuariosLoginPasswordJpql(String login, String password);
