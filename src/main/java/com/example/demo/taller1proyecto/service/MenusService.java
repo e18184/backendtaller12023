@@ -8,4 +8,6 @@ public interface MenusService {
 
     List<Menus> getMenusList();
 
+    List<Menus> findByLoginAndPassword(String login, String password, Long idrol);
+
 }

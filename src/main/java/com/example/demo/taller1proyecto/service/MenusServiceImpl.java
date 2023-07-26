@@ -22,4 +22,9 @@ public class MenusServiceImpl implements MenusService {
         return menusRepo.findAll();
     }
 
+    @Override
+    public List<Menus> findByLoginAndPassword(String login, String password, Long idrol) {
+        return menusRepo.findByLoginAndPassword(login, password, idrol);
+    }
+
 }

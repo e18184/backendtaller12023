@@ -39,5 +39,4 @@ public class Usuarios implements Serializable {
 
         @OneToOne
         Persona persona;
-
 }
