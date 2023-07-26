@@ -19,10 +19,11 @@ public class MenusController {
     @Autowired
     MenusService menuService;
 
-    @GetMapping("/{login}/{password}")
+    @GetMapping("/{login}/{password}/{idrol}")
     public ResponseEntity<List<Menus>> findRoles(@PathVariable String login, @PathVariable String password,
             @PathVariable Long idrol) {
         try {
+
             List<Menus> usuarios = menuService.findByLoginAndPassword(login, password, idrol);
             List<Menus> usuariosmenus = new ArrayList<>();
 

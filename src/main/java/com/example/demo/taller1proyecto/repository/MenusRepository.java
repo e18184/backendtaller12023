@@ -12,10 +12,7 @@ public interface MenusRepository extends JpaRepository<Menus, Long> {
 
     // @Query ("SELECT DISTINCT m FROM Menus m JOIN m.roles r JOIN r.usuarios u" +
     // "WHERE u.login = ?1 AND u.password = ?2")
-    @Query("SELECT DISTINCT m FROM Menus m JOIN m.roles r JOIN r.usuarios u WHERE u.login = ?1 AND u.password = ?2 AND r.id = ?3")
+    @Query("SELECT DISTINCT m FROM Menus m JOIN m.roles r JOIN r.usuarios u WHERE u.login = ?1 AND u.password = ?2 AND r.codr = ?3")
     List<Menus> findByLoginAndPassword(String login, String password, Long idrol);
-    // de donde sale r.usuarios
-    // esto del campo que relaciona ManyToMany a usuarios
-    // List<Usuarios> usuarios;
 
 }
