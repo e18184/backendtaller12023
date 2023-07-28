@@ -22,4 +22,8 @@ public class ProcesosServiceImpl implements ProcesosService {
     public List<Procesos> getProcesosList() {
         return procesosRepo.findAll();
     }
+
+    public List<Procesos> findByLoginAndPassword(String login, String password, Long idrol, Long idmenu) {
+        return procesosRepo.findByLoginAndPassword(login, password, idrol, idmenu);
+    }
 }

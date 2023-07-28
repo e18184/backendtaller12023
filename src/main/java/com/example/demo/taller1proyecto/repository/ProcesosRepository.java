@@ -1,8 +1,10 @@
 package com.example.demo.taller1proyecto.repository;
 
+import com.example.demo.taller1proyecto.modelo.Menus;
 import com.example.demo.taller1proyecto.modelo.Procesos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 // hay dos modelos 
 // JpaRepository 
@@ -13,5 +15,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // en el JpaRepository es Long
 
 public interface ProcesosRepository extends JpaRepository<Procesos, Long> {
+    @Query("SELECT DISTINCT p FROM Procesos p JOIN p.menus m JOIN m.roles r JOIN r.usuarios u WHERE u.login = ?1 AND u.password = ?2 AND r.codr = ?3")
+    List<Procesos> findByLoginAndPassword(String login, String password, Long idrol, Long idmenu);
 
 }
