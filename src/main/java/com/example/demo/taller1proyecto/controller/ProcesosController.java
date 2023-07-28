@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.taller1proyecto.modelo.Menus;
 import com.example.demo.taller1proyecto.modelo.Procesos;
 import com.example.demo.taller1proyecto.service.ProcesosService;
 

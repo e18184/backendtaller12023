@@ -2,7 +2,6 @@ package com.example.demo.taller1proyecto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.origin.SystemEnvironmentOrigin;
 
 import com.example.demo.taller1proyecto.modelo.*;
 import com.example.demo.taller1proyecto.service.*;
@@ -215,7 +214,7 @@ public class Taller1proyectoApplication {
 			 * jose docente, crear evaluacion docente, listar designacion
 			 */
 			// findBy
-			SystemEnvironmentOrigin.out.println("listar todos los usuarios con sus respectivos roles");
+			System.out.println("listar todos los usuarios con sus respectivos roles");
 			for (Usuarios usuarios : usuariosService.getUsuariosList()) {
 				System.out.println(
 						usuarios.getPersona().getNombre() + " " + usuarios.getLogin() + " " + usuarios.getPassword());

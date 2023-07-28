@@ -1,7 +1,6 @@
 package com.example.demo.taller1proyecto.repository;
 
 import com.example.demo.taller1proyecto.modelo.Menus;
-import com.example.demo.taller1proyecto.modelo.Roles;
 
 import java.util.List;
 

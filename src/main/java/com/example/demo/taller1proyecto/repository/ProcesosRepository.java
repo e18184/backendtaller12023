@@ -1,10 +1,10 @@
 package com.example.demo.taller1proyecto.repository;
 
-import com.example.demo.taller1proyecto.modelo.Menus;
 import com.example.demo.taller1proyecto.modelo.Procesos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import java.util.List;
 
 // hay dos modelos 
 // JpaRepository 
