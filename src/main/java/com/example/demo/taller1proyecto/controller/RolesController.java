@@ -48,4 +48,19 @@ public class RolesController {
         }
 
     }
+
+    @PostMapping()
+    public ResponseEntity<Roles> create(@RequestBody Roles roles) {
+        try {
+            Roles rol = new Roles();
+
+            rolesService.guardarRol(roles.getNombre(), roles.getEstado());
+            rol.setNombre(roles.getNombre());
+            rol.setEstado(roles.getEstado());
+            return new ResponseEntity<>(rol, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }

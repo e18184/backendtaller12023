@@ -3,9 +3,12 @@ package com.example.demo.taller1proyecto.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import com.example.demo.taller1proyecto.modelo.Roles;
+
+import jakarta.transaction.Transactional;
 
 public interface RolesRepository extends JpaRepository<Roles, Long> {
 
@@ -21,5 +24,10 @@ public interface RolesRepository extends JpaRepository<Roles, Long> {
     // de donde sale r.usuarios
     // esto del campo que relaciona ManyToMany a usuarios
     // List<Usuarios> usuarios;
+
+    @Transactional
+    @Modifying(clearAutomatically = true)
+    @Query(value = " insert into Roles (nombre,estado) values (?1 , ?2) ", nativeQuery = true)
+    public Integer guardarRol(String nombre, Integer estado);
 
 }

@@ -9,4 +9,7 @@ public interface RolesService {
     List<Roles> getRolesList();
 
     public List<Roles> findByLoginAndPassword(String login, String password);
+
+    public Integer guardarRol(String nombre, Integer estado);
+
 }
