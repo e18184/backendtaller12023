@@ -26,8 +26,4 @@ public class RolesServiceImpl implements RolesService {
         return rolesRepo.findByLoginAndPassword(login, password);
     }
 
-    public Integer guardarRol(String nombre, Integer estado) {
-        return rolesRepo.guardarRol(nombre, estado);
-    }
-
 }
