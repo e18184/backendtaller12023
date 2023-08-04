@@ -85,4 +85,15 @@ public class RolesController {
 
     }
 
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<Roles> deleteTutorial(@PathVariable("id") long id) {
+        try {
+
+            rolesService.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }
