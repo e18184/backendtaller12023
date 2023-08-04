@@ -32,4 +32,8 @@ public class RolesServiceImpl implements RolesService {
         return rolesRepo.findById(id);
     }
 
+    public void deleteById(Long id) {
+        rolesRepo.deleteById(id);
+    }
+
 }

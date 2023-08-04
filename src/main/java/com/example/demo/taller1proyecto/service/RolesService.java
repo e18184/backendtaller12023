@@ -13,4 +13,6 @@ public interface RolesService {
     public List<Roles> findByLoginAndPassword(String login, String password);
 
     Optional<Roles> findById(Long id);
+
+    public void deleteById(Long id);
 }
