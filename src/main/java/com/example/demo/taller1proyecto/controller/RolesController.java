@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.taller1proyecto.service.RolesService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.ArrayList;
 //import java.util.Arrays;
 
@@ -62,6 +63,28 @@ public class RolesController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @PutMapping("/actualizar/{id}")
+    public ResponseEntity<Roles> actualizar(@PathVariable("id") Long id, @RequestBody Roles roles) {
+        try {
+            Optional<Roles> rol = rolesService.findById(id);
+            Roles rolm = rol.get();
+            if (rol.isPresent()) {
+
+                rolm.setNombre(roles.getNombre());
+                rolm.setEstado(roles.getEstado());
+
+            }
+            rolesService.save(rolm);
+
+            return new ResponseEntity<>(rolm, HttpStatus.OK);
+        } catch (Exception e) {
+
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+
+        }
+
     }
 
 }

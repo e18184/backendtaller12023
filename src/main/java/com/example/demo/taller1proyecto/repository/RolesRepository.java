@@ -18,6 +18,7 @@ public interface RolesRepository extends JpaRepository<Roles, Long> {
 
     @Query("SELECT DISTINCT r FROM Roles r JOIN r.usuarios u " + "WHERE u.login = ?1 AND u.password = ?2")
     List<Roles> findByLoginAndPassword(String login, String password);
+
     // de donde sale r.usuarios
     // esto del campo que relaciona ManyToMany a usuarios
     // List<Usuarios> usuarios;
