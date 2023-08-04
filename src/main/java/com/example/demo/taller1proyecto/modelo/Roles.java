@@ -3,6 +3,10 @@ package com.example.demo.taller1proyecto.modelo;
 import java.io.Serializable;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -32,10 +36,12 @@ public class Roles implements Serializable {
     Integer estado;
 
     @ManyToMany(fetch = FetchType.EAGER)
+    @JsonIgnore
     @JoinTable(name = "roles_menu", joinColumns = @JoinColumn(name = "roles_id"), inverseJoinColumns = @JoinColumn(name = "menus_id"))
     // Set<Menus> menus = new HashSet<Menus>();
     List<Menus> menus;
     @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)
+    @JsonIgnore
     List<Usuarios> usuarios;
 
 }

@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.taller1proyecto.service.RolesService;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.ArrayList;
-//import java.util.Arrays;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -68,17 +67,16 @@ public class RolesController {
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<Roles> actualizar(@PathVariable("id") Long id, @RequestBody Roles roles) {
         try {
-            Optional<Roles> rol = rolesService.findById(id);
-            Roles rolm = rol.get();
-            if (rol.isPresent()) {
+            Roles rol = rolesService.findById(id).get();
 
-                rolm.setNombre(roles.getNombre());
-                rolm.setEstado(roles.getEstado());
+            if (Objects.nonNull(rol)) {
+
+                rol.setNombre(roles.getNombre());
+                rol.setEstado(roles.getEstado());
+                rolesService.save(rol);
 
             }
-            rolesService.save(rolm);
-
-            return new ResponseEntity<>(rolm, HttpStatus.OK);
+            return new ResponseEntity<Roles>(rol, HttpStatus.OK);
         } catch (Exception e) {
 
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
