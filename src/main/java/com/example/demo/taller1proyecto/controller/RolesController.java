@@ -86,7 +86,7 @@ public class RolesController {
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Roles> deleteTutorial(@PathVariable("id") long id) {
+    public ResponseEntity<Roles> eliminar(@PathVariable("id") long id) {
         try {
 
             rolesService.deleteById(id);
