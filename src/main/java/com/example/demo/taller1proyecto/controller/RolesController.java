@@ -96,4 +96,22 @@ public class RolesController {
         }
     }
 
+    @DeleteMapping("/baja/{id}")
+    public ResponseEntity<Roles> baja(@PathVariable("id") long id) {
+        try {
+
+            Roles rol = rolesService.findById(id).get();
+            if (Objects.nonNull(rol)) {
+
+                rol.setEstado(0);
+                rolesService.save(rol);
+
+            }
+
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }

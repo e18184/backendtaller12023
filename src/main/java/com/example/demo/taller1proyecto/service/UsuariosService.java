@@ -25,4 +25,7 @@ public interface UsuariosService {
 
     public List<Usuarios> findAll(Sort sort);
 
+    // public Usuarios loadUserByUsername(String login, String password) throws
+    // UsernameNotFoundException;
+
 }

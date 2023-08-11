@@ -108,6 +108,7 @@ public class UsuarioController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
     // realizar un metodo para devolver los roles asociados al usuario
     // findById(Integer id)
     // Clase Rol
@@ -117,5 +118,24 @@ public class UsuarioController {
     // nombre rol
     // docente
     // estudiante
-
+    /*
+     * @PostMapping("/login") public ResponseEntity<String> login(@RequestBody
+     * Usuarios usuarios) { String login = usuarios.getLogin(); String password =
+     * usuarios.getPassword();
+     * 
+     * List<Usuarios> usuariosList = usuarioService.findByLoginAndPassword(login,
+     * password);
+     * 
+     * if (!usuariosList.isEmpty()) { // Usuario válido, guardar la información del
+     * usuario en el contexto de // seguridad Usuarios userDetails =
+     * usuarioService.buildUserDetails(usuariosList.get(0)); Authentication
+     * authentication = new UsernamePasswordAuthenticationToken(userDetails, null,
+     * userDetails.getAuthorities());
+     * SecurityContextHolder.getContext().setAuthentication(authentication);
+     * 
+     * return ResponseEntity.ok("Inicio de sesión exitoso"); } else { // Usuario o
+     * contraseña incorrectos return
+     * ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales inválidas"
+     * ); } }
+     */
 }

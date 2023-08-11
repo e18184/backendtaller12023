@@ -2,7 +2,9 @@ package com.example.demo.taller1proyecto.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
+
 import com.example.demo.taller1proyecto.modelo.Usuarios;
 import com.example.demo.taller1proyecto.repository.UsuariosRepository;
 import org.springframework.data.domain.Sort;
@@ -52,5 +54,22 @@ public class UsuariosServiceImpl implements UsuariosService {
     public List<Usuarios> findAll(Sort sort) {
         return usuariosRepo.findAll(sort);
     }
+
+    /*
+     * @Override public Usuarios loadUserByUsername(String login, String password)
+     * throws UsernameNotFoundException {
+     * 
+     * Usuarios usuario = usuariosRepo.findByLoginAndPassword(login,
+     * password).get(0);
+     * 
+     * if (usuario == null) { throw new
+     * UsernameNotFoundException("Usuario no encontrado"); }
+     * 
+     * List<GrantedAuthority> authorities = usuario.getRoles().stream() .map(role ->
+     * new SimpleGrantedAuthority(role.getNombre())) .collect(Collectors.toList());
+     * 
+     * return new Usuarios(usuario.getLogin(), usuario.getPassword(), authorities);
+     * }
+     */
 
 }
