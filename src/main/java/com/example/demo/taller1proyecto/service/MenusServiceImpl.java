@@ -5,6 +5,8 @@ import com.example.demo.taller1proyecto.repository.MenusRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
+
 import com.example.demo.taller1proyecto.modelo.Menus;
 
 @Service
@@ -25,6 +27,14 @@ public class MenusServiceImpl implements MenusService {
     @Override
     public List<Menus> findByLoginAndPassword(String login, String password, Long idrol) {
         return menusRepo.findByLoginAndPassword(login, password, idrol);
+    }
+
+    public Optional<Menus> findById(Long id) {
+        return menusRepo.findById(id);
+    }
+
+    public void deleteById(Long id) {
+        menusRepo.deleteById(id);
     }
 
 }
