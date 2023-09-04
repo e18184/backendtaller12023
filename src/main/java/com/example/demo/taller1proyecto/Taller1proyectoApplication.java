@@ -6,14 +6,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.example.demo.taller1proyecto.modelo.*;
 import com.example.demo.taller1proyecto.service.*;
 
+import jakarta.annotation.PostConstruct;
+
 import java.util.Set;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Taller1proyectoApplication {
+	@Autowired
+	private SessionData sessionData;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Taller1proyectoApplication.class, args);
@@ -26,6 +31,7 @@ public class Taller1proyectoApplication {
 	) {
 		return (args) -> {
 			// save few person
+			this.sessionData.getClass();
 
 			Persona person1 = new Persona(null, "4143805", "Richard", "Cota", "Perez", 1, null, "casado", "M",
 					"Barrio Morros Blancos", "5916649145", null, null, null);
