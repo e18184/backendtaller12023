@@ -9,18 +9,25 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @RestController
 @RequestMapping("/sesiones3")
-@SessionAttributes("username")
+@SessionAttributes({ "username", "otro" })
 public class MyController3 {
     @ModelAttribute("username")
     public String setUsername() {
         return "user1";
     }
 
+    @ModelAttribute("otro")
+    public String setOtro() {
+        return "otro";
+    }
+
     @GetMapping("/getSession")
     @ResponseBody
-    public String getSession(@ModelAttribute("username") String username) {
+    public String getSession(@ModelAttribute("username") String username, @ModelAttribute("otro") String otro) {
         System.out.println("Username: " + username);
-        return "Username: " + username;
+        System.out.println("Otro: " + otro);
+
+        return "Username: " + username + "otro " + otro;
     }
 
 }

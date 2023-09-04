@@ -5730,3 +5730,76 @@ java.lang.IllegalStateException: Cannot create a session after the response has 
 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
 
 2023-09-04T08:15:49.599-04:00 ERROR 13872 --- [http-nio-8080-exec-1] s.e.ErrorMvcAutoConfiguration$StaticView : Cannot render error page for request [/sesiones3/getSession] as the response has already been committed. As a result, the response may have the wrong status code.
+2023-09-04T08:20:27.017-04:00  INFO 13872 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04T08:20:27.021-04:00  INFO 13872 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-09-04T08:20:27.136-04:00  INFO 13872 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-04T08:20:27.158-04:00  INFO 13872 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-04T08:20:40.961-04:00  INFO 10264 --- [main] c.e.d.t.Taller1proyectoApplication       : Starting Taller1proyectoApplication using Java 17.0.7 with PID 10264 (C:\Users\e1818\OneDrive\Documentos\gestion2023\taller1\taller1proyecto\target\classes started by e1818 in C:\Users\e1818\OneDrive\Documentos\gestion2023\taller1\taller1proyecto)
+2023-09-04T08:20:40.971-04:00  INFO 10264 --- [main] c.e.d.t.Taller1proyectoApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-04T08:20:43.165-04:00  INFO 10264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04T08:20:43.262-04:00 DEBUG 10264 --- [main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.example.demo.taller1proyecto'. Automatic @Repository and @Entity scanning is enabled.
+2023-09-04T08:20:43.440-04:00  INFO 10264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 209 ms. Found 5 JPA repository interfaces.
+2023-09-04T08:20:44.650-04:00  INFO 10264 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-04T08:20:44.673-04:00  INFO 10264 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-04T08:20:44.679-04:00  INFO 10264 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-09-04T08:20:44.888-04:00  INFO 10264 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-04T08:20:44.892-04:00  INFO 10264 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3775 ms
+2023-09-04T08:20:45.720-04:00  INFO 10264 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04T08:20:45.941-04:00  INFO 10264 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-09-04T08:20:46.664-04:00  INFO 10264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-04T08:20:46.856-04:00  INFO 10264 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7db791df
+2023-09-04T08:20:46.868-04:00  INFO 10264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-04T08:20:46.908-04:00  INFO 10264 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-09-04T08:20:46.915-04:00  WARN 10264 --- [main] org.hibernate.orm.deprecation            : HHH90000026: PostgreSQL95Dialect has been deprecated; use org.hibernate.dialect.PostgreSQLDialect instead
+2023-09-04T08:20:48.633-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.635-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «procesos_menus», omitiendo
+2023-09-04T08:20:48.641-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.643-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «procesos_menus», omitiendo
+2023-09-04T08:20:48.646-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.649-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «roles_menu», omitiendo
+2023-09-04T08:20:48.653-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.655-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «roles_menu», omitiendo
+2023-09-04T08:20:48.663-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.668-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «t_menus_procesos», omitiendo
+2023-09-04T08:20:48.678-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.685-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «t_menus_procesos», omitiendo
+2023-09-04T08:20:48.702-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.704-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «t_persona», omitiendo
+2023-09-04T08:20:48.709-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.711-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «t_usuarios», omitiendo
+2023-09-04T08:20:48.716-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.718-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «usuarios_roles», omitiendo
+2023-09-04T08:20:48.722-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.724-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «usuarios_roles», omitiendo
+2023-09-04T08:20:48.730-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.733-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «procesos» no existe, omitiendo
+2023-09-04T08:20:48.737-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.739-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «procesos_menus» no existe, omitiendo
+2023-09-04T08:20:48.742-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.744-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «roles_menu» no existe, omitiendo
+2023-09-04T08:20:48.749-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.751-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «t_menus» no existe, omitiendo
+2023-09-04T08:20:48.755-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.757-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «t_menus_procesos» no existe, omitiendo
+2023-09-04T08:20:48.761-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.763-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «t_persona» no existe, omitiendo
+2023-09-04T08:20:48.767-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.769-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «t_roles» no existe, omitiendo
+2023-09-04T08:20:48.773-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.775-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «t_usuarios» no existe, omitiendo
+2023-09-04T08:20:48.779-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.781-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «usuarios_roles» no existe, omitiendo
+2023-09-04T08:20:48.786-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.788-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «menus_codm» no existe, omitiendo
+2023-09-04T08:20:48.792-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.794-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «procesos_codp» no existe, omitiendo
+2023-09-04T08:20:48.799-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.801-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «roles_codr» no existe, omitiendo
+2023-09-04T08:20:48.804-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.806-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «usuario_codr» no existe, omitiendo
+2023-09-04T08:20:48.810-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-04T08:20:48.812-04:00  WARN 10264 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «usuarios_codu» no existe, omitiendo
+2023-09-04T08:20:49.018-04:00  INFO 10264 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04T08:20:49.049-04:00  INFO 10264 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04T08:20:50.896-04:00  WARN 10264 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-04T08:20:52.052-04:00  INFO 10264 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
