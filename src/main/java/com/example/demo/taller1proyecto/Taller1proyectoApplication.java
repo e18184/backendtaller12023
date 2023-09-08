@@ -6,8 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.example.demo.taller1proyecto.modelo.*;
 import com.example.demo.taller1proyecto.service.*;
 
-import jakarta.annotation.PostConstruct;
-
 import java.util.Set;
 import java.util.List;
 
