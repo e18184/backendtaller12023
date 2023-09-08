@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Entity;
 import lombok.*;
+import lombok.Builder.Default;
 
 @Data
 @AllArgsConstructor
@@ -52,6 +53,7 @@ public class Persona implements Serializable {
     String telef;
 
     @Column(name = "cod_tipo", length = 1, nullable = true)
+    @org.hibernate.annotations.ColumnDefault("1")
     @Comment("parametrico de estado 1(ACTIVO) 0(INACTIVO)")
     Integer tipo;
 
