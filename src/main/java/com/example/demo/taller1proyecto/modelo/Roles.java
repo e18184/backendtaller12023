@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import java.util.List;
 
+import org.hibernate.annotations.Comment;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -24,6 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "t_roles")
+@Comment("Roles que tiene un usuario")
 public class Roles implements Serializable {
     @Id
     @Column(name = "codr")

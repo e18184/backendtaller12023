@@ -2,24 +2,23 @@ package com.example.demo.taller1proyecto.modelo;
 
 import java.io.Serializable;
 import java.util.Date;
-
+import java.util.List;
 import org.hibernate.annotations.Comment;
-
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Entity;
 import lombok.*;
-import lombok.Builder.Default;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "t_persona")
-@Comment(value = "Representa la Entidad Persona")
+@Comment("Representa la Entidad Persona")
 public class Persona implements Serializable {
     @Id
     @Column(name = "codu")
@@ -42,10 +41,19 @@ public class Persona implements Serializable {
     @Comment("Apellido materno de la persona")
     String am;
 
+    @Comment("Si esta activo o no la persona")
     Integer estado;
+
+    @Comment("Fecha de nacimiento de la persona")
     Date fec;
+
+    @Comment("Estado civil de la persona")
     String ecivil;
+
+    @Comment("genero de la persona 0= femenino 1=masculino")
     String genero;
+
+    @Comment("direcion de la persona")
     String direc;
 
     @Column(name = "telefono_celular", length = 20, nullable = false)
@@ -62,6 +70,11 @@ public class Persona implements Serializable {
     String foto;
 
     @OneToOne
+    @Comment("Relacion de uno a uno con los datos de un usuario")
     Usuarios usuarios;
+
+    @OneToMany
+    @Comment("Persona puede tener muchas solicitudes de servicio")
+    List<SolicitudesServicio> solicitudesservicio;
 
 }

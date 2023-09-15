@@ -18,9 +18,6 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-// nota siempre estas clases piden un constructor como
-// minimo vacio
-// POJO
 @Entity
 public class Procesos implements Serializable {
     @Id
