@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Taller1proyectoApplication {
 	@Autowired
-	private SessionData sessionData;
+	// private SessionData sessionData;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Taller1proyectoApplication.class, args);
@@ -24,21 +24,27 @@ public class Taller1proyectoApplication {
 
 	@Bean
 	public CommandLineRunner demo(PersonaService personaService, UsuariosService usuariosService,
-			ProcesosService procesosService, MenusService menusService, RolesService rolesService
+			ProcesosService procesosService, MenusService menusService, RolesService rolesService,
+			SolicitudesServicioService solicitudesservicio
 
 	) {
 		return (args) -> {
 			// save few person
-			this.sessionData.getClass();
+			// this.sessionData.getClass();
 
 			Persona person1 = new Persona(null, "4143805", "Richard", "Cota", "Perez", 1, null, "casado", "M",
-					"Barrio Morros Blancos", "5916649145", null, null, null);
+					"Barrio Morros Blancos", "5916649145", null, null, null, null);
 
 			Persona person2 = new Persona(null, "4143805", "Ronald", "Cota", "Perez", 1, null, "casado", "M",
-					"Barrio Morros Blancos", "5916649145", null, null, null);
+					"Barrio Morros Blancos", "5916649145", null, null, null, null);
 
 			personaService.save(person1);
 			personaService.save(person2);
+
+			// llenar una orden de trabajo
+			SolicitudesServicio sc1 = new SolicitudesServicio(null, null, "esto es una problema 1", 1, person1);
+			SolicitudesServicio sc2 = new SolicitudesServicio(null, null, "esto es una problema 2", 1, person1);
+			solicitudesservicio.save(sc1);
 
 			// llenar un usuario
 			Usuarios usuario1 = new Usuarios(null, "uno", "uno", 1, null, person1);
