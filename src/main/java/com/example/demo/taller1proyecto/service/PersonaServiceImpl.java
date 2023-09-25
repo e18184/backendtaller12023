@@ -4,8 +4,7 @@ import com.example.demo.taller1proyecto.repository.PersonaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import com.example.demo.taller1proyecto.modelo.Persona;
+import com.example.demo.taller1proyecto.modelo3.Personas;
 
 @Service
 public class PersonaServiceImpl implements PersonaService {
@@ -13,13 +12,13 @@ public class PersonaServiceImpl implements PersonaService {
     PersonaRepository personRepo;
 
     @Override
-    public void save(Persona persona) {
+    public void save(Personas persona) {
         personRepo.save(persona);
     }
 
-    @Override
-    public List<Persona> getPersonaList() {
-        return personRepo.findAll();
-    }
+    // @Override
+    // public List<Personas> getPersonaList() {
+    // return personRepo.findAll();
+    // }
 
 }

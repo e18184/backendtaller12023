@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.demo.taller1proyecto.modelo.Roles;
+import com.example.demo.taller1proyecto.modelo3.Roles;
 
 @Service
 public class RolesServiceImpl implements RolesService {
@@ -24,9 +24,9 @@ public class RolesServiceImpl implements RolesService {
         return rolesRepo.findAll();
     }
 
-    public List<Roles> findByLoginAndPassword(String login, String password) {
-        return rolesRepo.findByLoginAndPassword(login, password);
-    }
+    // public List<Roles> findByLoginAndPassword(String login, String password) {
+    // return rolesRepo.findByLoginAndPassword(login, password);
+    // }
 
     public Optional<Roles> findById(Long id) {
         return rolesRepo.findById(id);

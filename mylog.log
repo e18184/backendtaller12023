@@ -1,45 +1,37 @@
-2023-09-15T10:08:14.027-04:00  INFO 8036 --- [main] c.e.d.t.Taller1proyectoApplication       : Starting Taller1proyectoApplication using Java 17.0.8.1 with PID 8036 (C:\Users\e1818\OneDrive\Documentos\gestion2023\taller1\taller1proyecto\target\classes started by e1818 in C:\Users\e1818\OneDrive\Documentos\gestion2023\taller1\taller1proyecto)
-2023-09-15T10:08:14.075-04:00  INFO 8036 --- [main] c.e.d.t.Taller1proyectoApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-09-15T10:08:17.806-04:00  INFO 8036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-15T10:08:17.930-04:00 DEBUG 8036 --- [main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.example.demo.taller1proyecto'. Automatic @Repository and @Entity scanning is enabled.
-2023-09-15T10:08:18.074-04:00  INFO 8036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 171 ms. Found 5 JPA repository interfaces.
-2023-09-15T10:08:19.308-04:00  INFO 8036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-15T10:08:19.340-04:00  INFO 8036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-15T10:08:19.344-04:00  INFO 8036 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
-2023-09-15T10:08:19.592-04:00  INFO 8036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-15T10:08:19.596-04:00  INFO 8036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5151 ms
-2023-09-15T10:08:20.264-04:00  INFO 8036 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-15T10:08:20.413-04:00  INFO 8036 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
-2023-09-15T10:08:21.244-04:00  INFO 8036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-15T10:08:21.626-04:00  INFO 8036 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@243c4346
-2023-09-15T10:08:21.639-04:00  INFO 8036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-15T10:08:21.688-04:00  INFO 8036 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2023-09-15T10:08:21.695-04:00  WARN 8036 --- [main] org.hibernate.orm.deprecation            : HHH90000026: PostgreSQL95Dialect has been deprecated; use org.hibernate.dialect.PostgreSQLDialect instead
-2023-09-15T10:08:24.748-04:00  WARN 8036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-09-15T10:08:24.750-04:00  WARN 8036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «t_persona_solicitudesservicio», omitiendo
-2023-09-15T10:08:24.753-04:00  WARN 8036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-09-15T10:08:24.755-04:00  WARN 8036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «t_persona_solicitudesservicio», omitiendo
-2023-09-15T10:08:24.805-04:00  WARN 8036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-09-15T10:08:24.807-04:00  WARN 8036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «t_persona_solicitudesservicio» no existe, omitiendo
-2023-09-15T10:08:24.838-04:00  WARN 8036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-09-15T10:08:24.839-04:00  WARN 8036 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «solicitudesservicio_codu» no existe, omitiendo
-2023-09-15T10:08:25.103-04:00  INFO 8036 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-15T10:08:25.117-04:00  INFO 8036 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-15T10:08:25.125-04:00  INFO 8036 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static methods: public static void com.example.demo.taller1proyecto.Taller1proyectoApplication.main(java.lang.String[])
-2023-09-15T10:08:26.832-04:00  WARN 8036 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-15T10:08:28.334-04:00  WARN 8036 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+2023-09-25T11:07:54.884-04:00  INFO 7856 --- [main] c.e.d.t.Taller1proyectoApplication       : Starting Taller1proyectoApplication using Java 17.0.8.1 with PID 7856 (C:\Users\e1818\OneDrive\Documentos\gestion2023\taller1\taller1proyecto\target\classes started by e1818 in C:\Users\e1818\OneDrive\Documentos\gestion2023\taller1\taller1proyecto)
+2023-09-25T11:07:54.905-04:00  INFO 7856 --- [main] c.e.d.t.Taller1proyectoApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-09-25T11:07:58.594-04:00  INFO 7856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-25T11:07:58.653-04:00 DEBUG 7856 --- [main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.example.demo.taller1proyecto'. Automatic @Repository and @Entity scanning is enabled.
+2023-09-25T11:07:58.810-04:00  INFO 7856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 192 ms. Found 4 JPA repository interfaces.
+2023-09-25T11:08:00.171-04:00  INFO 7856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-25T11:08:00.206-04:00  INFO 7856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-25T11:08:00.210-04:00  INFO 7856 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-09-25T11:08:00.518-04:00  INFO 7856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-25T11:08:00.522-04:00  INFO 7856 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5380 ms
+2023-09-25T11:08:01.319-04:00  INFO 7856 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-25T11:08:01.523-04:00  INFO 7856 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-09-25T11:08:02.560-04:00  INFO 7856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-25T11:08:02.982-04:00  INFO 7856 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6ba060af
+2023-09-25T11:08:02.990-04:00  INFO 7856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-25T11:08:03.072-04:00  INFO 7856 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-09-25T11:08:03.077-04:00  WARN 7856 --- [main] org.hibernate.orm.deprecation            : HHH90000026: PostgreSQL95Dialect has been deprecated; use org.hibernate.dialect.PostgreSQLDialect instead
+2023-09-25T11:08:06.438-04:00  INFO 7856 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-25T11:08:06.465-04:00  INFO 7856 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-25T11:08:06.490-04:00  INFO 7856 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static methods: public static void com.example.demo.taller1proyecto.Taller1proyectoApplication.main(java.lang.String[])
+2023-09-25T11:08:07.980-04:00  WARN 7856 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-25T11:08:08.059-04:00  WARN 7856 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: c751f1f2-0588-4921-b09e-7f78525410ae
+Using generated security password: 9fb08933-b1b7-47c9-9054-5907f65bcf13
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2023-09-15T10:08:28.630-04:00  INFO 8036 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-09-15T10:08:28.680-04:00  INFO 8036 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@189f2184, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57386162, org.springframework.security.web.context.SecurityContextHolderFilter@2bcaec2e, org.springframework.security.web.header.HeaderWriterFilter@75c36570, org.springframework.web.filter.CorsFilter@7388d94d, org.springframework.security.web.csrf.CsrfFilter@6eac71db, org.springframework.security.web.authentication.logout.LogoutFilter@29f58b44, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6d58ed12, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1f612968, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6da14f7f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7d364bce, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9d4d221, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c0becae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c53c04e, org.springframework.security.web.access.ExceptionTranslationFilter@1eff74f2, org.springframework.security.web.access.intercept.AuthorizationFilter@323b5264]
-2023-09-15T10:08:28.955-04:00  INFO 8036 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-15T10:08:28.957-04:00  INFO 8036 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-09-15T10:08:28.963-04:00  INFO 8036 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2023-09-15T10:08:29.432-04:00  INFO 8036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-09-15T10:08:29.667-04:00 DEBUG 8036 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2023-09-25T11:08:08.918-04:00  INFO 7856 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-09-25T11:08:09.015-04:00  INFO 7856 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Or [Mvc [pattern='/**']] with [org.springframework.security.web.session.DisableEncodeUrlFilter@469bd719, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15405ba1, org.springframework.security.web.context.SecurityContextHolderFilter@4172c967, org.springframework.security.web.header.HeaderWriterFilter@47400608, org.springframework.security.web.authentication.logout.LogoutFilter@5e8e02a3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bb3294c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@294a3f2a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f6e3b67, org.springframework.security.web.session.SessionManagementFilter@67aaf882, org.springframework.security.web.access.ExceptionTranslationFilter@7ed5cc8c, org.springframework.security.web.access.intercept.AuthorizationFilter@2eafb4e7]
+2023-09-25T11:08:09.755-04:00  INFO 7856 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-25T11:08:09.759-04:00  INFO 7856 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-25T11:08:09.766-04:00  INFO 7856 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-09-25T11:08:10.200-04:00  INFO 7856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-25T11:08:10.346-04:00 DEBUG 7856 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 
 ============================
@@ -450,10 +442,6 @@ Positive matches:
    ManagementContextAutoConfiguration.SameManagementContextConfiguration matched:
       - Management Port actual port type (SAME) matched required type (OnManagementPortCondition)
 
-   ManagementWebSecurityAutoConfiguration matched:
-      - found 'session' scope (OnWebApplicationCondition)
-      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
-
    MappingsEndpointAutoConfiguration matched:
       - @ConditionalOnAvailableEndpoint marked as exposed by a 'management.endpoints.jmx.exposure' property (OnAvailableEndpointCondition)
 
@@ -614,10 +602,6 @@ Positive matches:
    SpringBootWebSecurityConfiguration matched:
       - found 'session' scope (OnWebApplicationCondition)
 
-   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
-      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
-      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
-
    SpringDataWebAutoConfiguration matched:
       - @ConditionalOnClass found required classes 'org.springframework.data.web.PageableHandlerMethodArgumentResolver', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
       - found 'session' scope (OnWebApplicationCondition)
@@ -631,7 +615,7 @@ Positive matches:
 
    SqlInitializationAutoConfiguration matched:
       - @ConditionalOnProperty (spring.sql.init.enabled) matched (OnPropertyCondition)
-      - NoneNestedConditions 0 matched 1 did not; NestedCondition on SqlInitializationAutoConfiguration.SqlInitializationModeCondition.ModeIsNever @ConditionalOnProperty (spring.sql.init.mode=never) did not find property 'mode' (SqlInitializationAutoConfiguration.SqlInitializationModeCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on SqlInitializationAutoConfiguration.SqlInitializationModeCondition.ModeIsNever @ConditionalOnProperty (spring.sql.init.mode=never) found different value in property 'mode' (SqlInitializationAutoConfiguration.SqlInitializationModeCondition)
 
    StartupTimeMetricsListenerAutoConfiguration matched:
       - @ConditionalOnClass found required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
@@ -1424,6 +1408,12 @@ Negative matches:
       Did not match:
          - Management Port actual port type (SAME) did not match required type (DIFFERENT) (OnManagementPortCondition)
 
+   ManagementWebSecurityAutoConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' applicationSecurity; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+      Matched:
+         - found 'session' scope (OnWebApplicationCondition)
+
    MappingsEndpointAutoConfiguration.ReactiveWebConfiguration:
       Did not match:
          - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.DispatcherHandler' (OnClassCondition)
@@ -1753,7 +1743,13 @@ Negative matches:
 
    SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
       Did not match:
-         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' managementSecurityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' applicationSecurity; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
 
    StackdriverMetricsExportAutoConfiguration:
       Did not match:
@@ -1917,4 +1913,4 @@ Unconditional classes:
 
 
 
-2023-09-15T10:08:30.400-04:00  INFO 8036 --- [main] c.e.d.t.Taller1proyectoApplication       : Started Taller1proyectoApplication in 17.833 seconds (process running for 18.959)
+2023-09-25T11:08:11.915-04:00  INFO 7856 --- [main] c.e.d.t.Taller1proyectoApplication       : Started Taller1proyectoApplication in 18.265 seconds (process running for 19.207)

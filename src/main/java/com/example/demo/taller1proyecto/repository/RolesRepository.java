@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.example.demo.taller1proyecto.modelo.Roles;
+import com.example.demo.taller1proyecto.modelo3.Roles;
 
 public interface RolesRepository extends JpaRepository<Roles, Long> {
 
@@ -15,10 +15,11 @@ public interface RolesRepository extends JpaRepository<Roles, Long> {
      * 
      * public List<Roles> findByLoginAndPassword(String login, String password);
      */
-
-    @Query("SELECT DISTINCT r FROM Roles r JOIN r.usuarios u " + "WHERE u.login = ?1 AND u.password = ?2")
-    List<Roles> findByLoginAndPassword(String login, String password);
-
+    /*
+     * @Query("SELECT DISTINCT r FROM Roles r JOIN r.usuario_roles u " +
+     * "WHERE u.login = ?1 AND u.password = ?2") List<Roles>
+     * findByLoginAndPassword(String login, String password);
+     */
     // de donde sale r.usuarios
     // esto del campo que relaciona ManyToMany a usuarios
     // List<Usuarios> usuarios;

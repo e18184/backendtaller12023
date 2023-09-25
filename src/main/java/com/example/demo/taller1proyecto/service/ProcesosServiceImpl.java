@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-import com.example.demo.taller1proyecto.modelo.Procesos;
+import com.example.demo.taller1proyecto.modelo3.Procesos;
 
 @Service
 public class ProcesosServiceImpl implements ProcesosService {
