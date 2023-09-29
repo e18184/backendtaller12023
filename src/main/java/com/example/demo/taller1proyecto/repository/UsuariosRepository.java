@@ -1,8 +1,8 @@
 package com.example.demo.taller1proyecto.repository;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import com.example.demo.taller1proyecto.modelo3.Usuarios;
 import java.util.List;
 
@@ -41,6 +41,8 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
 
     // // necesitamos un metodo que me devuelva el objeto
     public List<Usuarios> findByCodu(Integer id);
+
+    public List<Usuarios> findAll(Sort sort);
 
     // public List<Usuarios> findAll(Sort sort);
 

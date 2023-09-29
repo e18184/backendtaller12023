@@ -51,9 +51,9 @@ public class UsuariosServiceImpl implements UsuariosService {
         return usuariosRepo.findByCodu(codu);
     }
 
-    // public List<Usuarios> findAll(Sort sort) {
-    // return usuariosRepo.findAll(sort);
-    // }
+    public List<Usuarios> findAll(Sort sort) {
+        return usuariosRepo.findAll(sort);
+    }
 
     // /*
     // * @Override public Usuarios loadUserByUsername(String login, String password)
@@ -74,5 +74,4 @@ public class UsuariosServiceImpl implements UsuariosService {
     // authorities);
     // * }
     // */
-
 }

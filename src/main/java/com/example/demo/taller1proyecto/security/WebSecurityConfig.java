@@ -15,8 +15,8 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain applicationSecurity(HttpSecurity http) throws Exception {
         http.cors().disable().csrf().disable().sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().formLogin().disable()
-                .securityMatcher("/**").authorizeHttpRequests(registry -> registry.requestMatchers("/").permitAll());
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().formLogin().disable().securityMatcher("/")
+                .authorizeHttpRequests(registry -> registry.requestMatchers("/").permitAll());
         return http.build();
 
     }

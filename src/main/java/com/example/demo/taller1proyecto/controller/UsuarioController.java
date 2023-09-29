@@ -21,6 +21,22 @@ public class UsuarioController {
     @Autowired
     UsuariosService usuarioService;
 
+    @GetMapping("/")
+    public ResponseEntity<List<Usuarios>> findAll() {
+        try {
+            Sort sortBy = Sort.by(new Sort.Order(Sort.Direction.ASC, "usuario").ignoreCase());
+            List<Usuarios> usuarios = usuarioService.findAll(sortBy);
+            // Iterar sobre la lista de usuarios y establecer las relaciones a null
+            for (Usuarios usuario : usuarios) {
+                usuario.setId_rol(null);
+
+            }
+            return new ResponseEntity<>(usuarios, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<List<Usuarios>> find(@PathVariable Integer id) {
         try {

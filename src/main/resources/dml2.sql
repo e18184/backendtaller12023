@@ -3,7 +3,8 @@ VALUES
   (1,1, 'Administrador'),
   (2,1, 'Técnico'),
   (3,1, 'Supervisor'),
-  (4,1, 'Usuario');
+  (4,1, 'Usuario'),
+  (5,1,'Observador');
 
 -- Insertar datos en la tabla "public".personas
 
@@ -13,7 +14,8 @@ VALUES
   (2,'Rodríguez', 'Fernández', '5678901234', 1, 'A', 'foto.jpg', 'Pedro', '555-555-5557'),
   (3,'Martínez', 'López', '2345678901', 1, 'A', 'foto.jpg', 'María', '555-555-5558'),
   (4,'García', 'Hernández', '1234567890', 1, 'A', 'foto.jpg', 'Luis', '555-555-5559'),
-  (5,'Sánchez', 'Ramírez', '3456789012', 1, 'A', 'foto.jpg', 'Elena', '555-555-5560');
+  (5,'Sánchez', 'Ramírez', '3456789012', 1, 'A', 'foto.jpg', 'Elena', '555-555-5560'),
+  (6,'Sivila', 'Rios', '4143805', 1, 'A', 'foto.jpg', 'mario', '67382875');
 
 -- Insertar datos en la tabla "public".usuarios
 

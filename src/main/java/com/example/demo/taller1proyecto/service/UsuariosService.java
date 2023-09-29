@@ -7,26 +7,26 @@ import org.springframework.data.domain.Sort;
 
 @Service
 public interface UsuariosService {
-// void save(Usuarios usuarios);
+    // void save(Usuarios usuarios);
 
-// List<Usuarios> getUsuariosList();
+    // List<Usuarios> getUsuariosList();
 
-// boolean usuariosFindById(Long id);
+    // boolean usuariosFindById(Long id);
 
-List<Usuarios> getUsuariosUsuarioContrasenaSql(String usuario, String contrasena);
+    List<Usuarios> getUsuariosUsuarioContrasenaSql(String usuario, String contrasena);
 
-// public List<Usuarios> getUsuariosLoginPasswordJpql(String login, String
-// password);
+    // public List<Usuarios> getUsuariosLoginPasswordJpql(String login, String
+    // password);
 
-public List<Usuarios> findByUsuarioAndContrasena(String usuario, String contrasena);
+    public List<Usuarios> findByUsuarioAndContrasena(String usuario, String contrasena);
 
-// public List<Usuarios> findByLoginLike(String login);
+    // public List<Usuarios> findByLoginLike(String login);
 
-public List<Usuarios> findByCodU(Integer id);
+    public List<Usuarios> findByCodU(Integer id);
 
-// public List<Usuarios> findAll(Sort sort);
+    public List<Usuarios> findAll(Sort sort);
 
-// // public Usuarios loadUserByUsername(String login, String password) throws
-// // UsernameNotFoundException;
+    // // public Usuarios loadUserByUsername(String login, String password) throws
+    // // UsernameNotFoundException;
 
-// }
+}
