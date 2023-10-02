@@ -9,6 +9,7 @@ import lombok.*;
 @Table(name = "personas", schema = "public")
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Personas implements Serializable {
 	@Column(name = "seq_persona", nullable = false)
 	@Id
