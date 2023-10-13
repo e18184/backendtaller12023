@@ -9,7 +9,7 @@ import lombok.*;
 @Table(name = "roles", schema = "public")
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Data
 public class Roles implements Serializable {
 	@Column(name = "id_rol", nullable = false)
 	@Id

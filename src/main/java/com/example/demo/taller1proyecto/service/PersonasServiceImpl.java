@@ -28,4 +28,9 @@ public class PersonasServiceImpl implements PersonasService {
     // return personRepo.findAll();
     // }
 
+    @Override
+    public void deleteById(Long id) {
+        personRepo.deleteById(id);
+    }
+
 }

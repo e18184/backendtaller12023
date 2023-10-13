@@ -1,3 +1,8 @@
+INSERT INTO "public".users (id,first_name,email)
+VALUES 
+(1,'Richard','richard.sivila.rios@gmail.com'),
+(2,'Carlos','carlos@gmail.com');
+
 INSERT INTO "public".roles (id_rol,cod_estado, nombre)
 VALUES 
   (1,1, 'Administrador'),

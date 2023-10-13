@@ -1,7 +1,5 @@
 package com.example.demo.taller1proyecto.controller;
 
-import lombok.RequiredArgsConstructor;
-
 import java.util.List;
 
 import org.springframework.data.domain.Sort;
@@ -10,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.taller1proyecto.service.PersonasService;
 import com.example.demo.taller1proyecto.modelo3.Personas;
-import com.example.demo.taller1proyecto.modelo3.Usuarios;
 
 @RestController
 @RequestMapping("/personascontroller")
@@ -65,22 +62,21 @@ public class PersonasController {
     // @PutMapping()
     // public ResponseEntity<?> update(@RequestBody Dto dto) {
     // try {
-    // // TODO Implement Your Logic To Update Data And Return Result Through
-    // // ResponseEntity
+    // personasservice.save(personasservice.findById());
     // return new ResponseEntity<>("Update Result", HttpStatus.OK);
     // } catch (Exception e) {
     // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     // }
     // }
 
-    // @DeleteMapping("/{id}")
-    // public ResponseEntity<?> delete(@PathVariable Integer id) {
-    // try {
-    // // TODO Implement Your Logic To Destroy Data And Return Result Through
-    // // ResponseEntity
-    // return new ResponseEntity<>("Destroy Result", HttpStatus.OK);
-    // } catch (Exception e) {
-    // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    // }
-    // }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id) {
+        try {
+            // personasservice.deleteById(id);
+
+            return new ResponseEntity<>("Destroy Result", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

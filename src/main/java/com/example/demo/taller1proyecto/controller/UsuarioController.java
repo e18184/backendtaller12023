@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.example.demo.taller1proyecto.modelo3.Usuarios;
 
 @RestController
+/** api/users */
 @RequestMapping("/usuariocontroller")
 public class UsuarioController {
     @Autowired
@@ -41,7 +42,12 @@ public class UsuarioController {
             List<Usuarios> usuarios = usuarioService.findByCodU(id);
             // Iterar sobre la lista de usuarios y establecer las relaciones a null
             for (Usuarios usuario : usuarios) {
+                
                 usuario.setId_rol(null);
+                
+                
+                // usuario.getRoles()  Set 
+                
 
             }
             return new ResponseEntity<>(usuarios, HttpStatus.OK);

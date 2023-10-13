@@ -11,5 +11,7 @@ public interface PersonasService {
 
     public List<Personas> findAll(Sort sort);
 
+    public void deleteById(Long id);
+
     // List<Personas> getPersonaList(); }
 }
