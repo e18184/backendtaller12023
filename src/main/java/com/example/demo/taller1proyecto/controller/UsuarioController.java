@@ -14,8 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.example.demo.taller1proyecto.modelo3.Usuarios;
 
 @RestController
-/** api/users */
 @RequestMapping("/usuariocontroller")
+
 public class UsuarioController {
     @Autowired
     UsuariosService usuarioService;
@@ -42,12 +42,10 @@ public class UsuarioController {
             List<Usuarios> usuarios = usuarioService.findByCodU(id);
             // Iterar sobre la lista de usuarios y establecer las relaciones a null
             for (Usuarios usuario : usuarios) {
-                
+
                 usuario.setId_rol(null);
-                
-                
-                // usuario.getRoles()  Set 
-                
+
+                // usuario.getRoles() Set
 
             }
             return new ResponseEntity<>(usuarios, HttpStatus.OK);
@@ -125,25 +123,19 @@ public class UsuarioController {
     // // docente
     // // estudiante
     // /*
-    // * @PostMapping("/login") public ResponseEntity<String> login(@RequestBody
-    // * Usuarios usuarios) { String login = usuarios.getLogin(); String password =
-    // * usuarios.getPassword();
-    // *
-    // * List<Usuarios> usuariosList = usuarioService.findByLoginAndPassword(login,
-    // * password);
-    // *
-    // * if (!usuariosList.isEmpty()) { // Usuario válido, guardar la información
-    // del
-    // * usuario en el contexto de // seguridad Usuarios userDetails =
-    // * usuarioService.buildUserDetails(usuariosList.get(0)); Authentication
-    // * authentication = new UsernamePasswordAuthenticationToken(userDetails, null,
-    // * userDetails.getAuthorities());
-    // * SecurityContextHolder.getContext().setAuthentication(authentication);
-    // *
-    // * return ResponseEntity.ok("Inicio de sesión exitoso"); } else { // Usuario o
-    // * contraseña incorrectos return
-    // * ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales
-    // inválidas"
-    // * ); } }
-    // */
+    @PostMapping
+    @CrossOrigin(origins = "http://localhost:8081")
+    public String usuario(@RequestBody Usuarios usuarios) {
+        System.out.println("usuario:" + usuarios.getUsuario() + "contrasena: " + usuarios.getContrasena());
+        List<Usuarios> lista = usuarioService.findByUsuarioAndContrasena(usuarios.getUsuario(),
+                usuarios.getContrasena());
+        if (lista != null && !lista.isEmpty()) {
+            Usuarios u = (Usuarios) lista.get(0);
+            System.out.println("Ok");
+            return "OK";
+        } else
+            System.out.println("KO");
+        return "KO";
+
+    }
 }
