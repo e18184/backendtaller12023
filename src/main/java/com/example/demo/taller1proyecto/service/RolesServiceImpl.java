@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.taller1proyecto.modelo3.Roles;
+import com.example.demo.taller1proyecto.modelo3.Usuarios;
 
 @Service
 public class RolesServiceImpl implements RolesService {
@@ -34,6 +35,11 @@ public class RolesServiceImpl implements RolesService {
 
     public void deleteById(Long id) {
         rolesRepo.deleteById(id);
+    }
+
+    @Override
+    public List<Roles> findByUsuarios(Usuarios usuarios) {
+        return rolesRepo.findByUsuarioAndContrasena(usuarios.getUsuario(), usuarios.getContrasena());
     }
 
 }

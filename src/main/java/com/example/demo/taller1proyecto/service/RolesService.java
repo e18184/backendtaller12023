@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.taller1proyecto.modelo3.Roles;
+import com.example.demo.taller1proyecto.modelo3.Usuarios;
 
 public interface RolesService {
     void save(Roles roles);
@@ -15,4 +16,7 @@ public interface RolesService {
     Optional<Roles> findById(Long id);
 
     public void deleteById(Long id);
+
+    public List<Roles> findByUsuarios(Usuarios usuarios);
+
 }

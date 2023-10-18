@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.taller1proyecto.service.UsuariosService;
 import org.springframework.data.domain.Sort;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -124,7 +125,6 @@ public class UsuarioController {
     // // estudiante
     // /*
     @PostMapping
-    @CrossOrigin(origins = "http://localhost:8081")
     public String usuario(@RequestBody Usuarios usuarios) {
         System.out.println("usuario:" + usuarios.getUsuario() + "contrasena: " + usuarios.getContrasena());
         List<Usuarios> lista = usuarioService.findByUsuarioAndContrasena(usuarios.getUsuario(),
@@ -138,4 +138,34 @@ public class UsuarioController {
         return "KO";
 
     }
+
+    // @PostMapping("/auth")
+    // @CrossOrigin(origins = "http://localhost:8081")
+    // public ResponseEntity<String> authenticate(@RequestHeader("Authorization")
+    // String authHeader) {
+    // // Verifica la autenticación básica aquí.
+    // if (isValidCredentials(authHeader)) {
+    // return new ResponseEntity<>("OK", HttpStatus.OK);
+    // } else {
+    // return new ResponseEntity<>("KO", HttpStatus.UNAUTHORIZED);
+    // }
+    // }
+
+    // private boolean isValidCredentials(String authHeader) {
+    // // Extrae el usuario y la contraseña del encabezado de autorización.
+    // String base64Credentials = authHeader.substring("Basic".length()).trim();
+    // String credentials = new
+    // String(Base64.getDecoder().decode(base64Credentials));
+    // String[] parts = credentials.split(":", 2);
+
+    // // Verifica las credenciales aquí (por ejemplo, consulta tu base de datos).
+    // String username = parts[0];
+    // String password = parts[1];
+
+    // // Realiza la lógica de verificación, como verificar en la base de datos o en
+    // // algún otro sistema de autenticación.
+    // // Retorna true si las credenciales son válidas, de lo contrario, false.
+
+    // return username.equals("usuario") && password.equals("contrasena");
+    // }
 }
