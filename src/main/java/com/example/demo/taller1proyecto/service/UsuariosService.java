@@ -1,13 +1,10 @@
 package com.example.demo.taller1proyecto.service;
 
 import org.springframework.stereotype.Service;
-import com.example.demo.taller1proyecto.modelo.Usuarios;
-import java.util.List;
+
+import com.example.demo.taller1proyecto.modelo3.Usuarios;
 
 @Service
 public interface UsuariosService {
-    void save(Usuarios usuarios);
-
-    List<Usuarios> getUsuariosList();
-
+    Usuarios authenticateUsuario(String usuario, String contrasena);
 }

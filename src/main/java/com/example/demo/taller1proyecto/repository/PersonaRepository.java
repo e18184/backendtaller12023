@@ -1,8 +1,8 @@
 package com.example.demo.taller1proyecto.repository;
 
-import com.example.demo.taller1proyecto.modelo.Persona;
-
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.taller1proyecto.modelo3.Personas;
 
 // hay dos modelos 
 // JpaRepository 
@@ -12,6 +12,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // es la llave primaria de la clase. Normalmente es Intero
 // en el JpaRepository es Long
 
-public interface PersonaRepository extends JpaRepository<Persona, Long> {
+public interface PersonaRepository extends JpaRepository<Personas, Long> {
 
 }
