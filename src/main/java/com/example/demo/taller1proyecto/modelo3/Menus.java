@@ -9,7 +9,10 @@ import lombok.*;
 @Table(name = "menus", schema = "public")
 @NoArgsConstructor
 @AllArgsConstructor
+<<<<<<< HEAD
 @Data
+=======
+>>>>>>> 4a3e207b8326dc9073cfcfd7301879e01d407a95
 public class Menus implements Serializable {
 	@Column(name = "codm", nullable = false)
 	@Id

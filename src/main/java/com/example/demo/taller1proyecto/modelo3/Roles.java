@@ -1,4 +1,8 @@
 package com.example.demo.taller1proyecto.modelo3;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4a3e207b8326dc9073cfcfd7301879e01d407a95
 import java.io.Serializable;
 import jakarta.persistence.*;
 import lombok.*;
