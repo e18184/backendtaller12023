@@ -15,13 +15,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.example.demo.taller1proyecto.modelo3.Usuarios;
 
 @RestController
-@RequestMapping("/usuariocontroller")
-@CrossOrigin(origins = "http://localhost:8081")
+@RequestMapping("usuariocontroller")
 public class UsuarioController {
     @Autowired
     UsuariosService usuarioService;
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<Usuarios>> findAll() {
         try {
             Sort sortBy = Sort.by(new Sort.Order(Sort.Direction.ASC, "usuario").ignoreCase());

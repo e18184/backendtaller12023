@@ -1,17 +1,8 @@
 package com.example.demo.taller1proyecto.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.taller1proyecto.modelo3.Menus;
-
-import com.example.demo.taller1proyecto.service.RolesService;
 import com.example.demo.taller1proyecto.service.MenusService;
 
 @RestController

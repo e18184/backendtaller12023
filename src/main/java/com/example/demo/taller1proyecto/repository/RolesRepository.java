@@ -3,10 +3,8 @@ package com.example.demo.taller1proyecto.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.taller1proyecto.modelo3.Roles;
-import com.example.demo.taller1proyecto.modelo3.Usuarios;
 
 import java.util.List;
-import java.util.Set;
 
 public interface RolesRepository extends JpaRepository<Roles, Long> {
 
@@ -25,6 +23,7 @@ public interface RolesRepository extends JpaRepository<Roles, Long> {
     // esto del campo que relaciona ManyToMany a usuarios
     // List<Usuarios> usuarios;
 
-    public List<Roles> findByUsuarioAndContrasena(String usuario, String contrasena);
+    // public List<Roles> findByUsuarioAndContrasena(String usuario, String
+    // contrasena);
 
 }

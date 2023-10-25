@@ -4,9 +4,10 @@ import java.util.Optional;
 
 import com.example.demo.taller1proyecto.modelo3.User;
 import java.util.List;
+import org.springframework.data.domain.Sort;
 
 public interface UserService {
-    public List findAll();
+    public List findAll(Sort sort);
 
     public User save(User user);
 

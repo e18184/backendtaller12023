@@ -1,5 +1,4 @@
 package com.example.demo.taller1proyecto.modelo3;
-
 import java.io.Serializable;
 import jakarta.persistence.*;
 import lombok.*;

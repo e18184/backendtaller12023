@@ -1,7 +1,10 @@
-INSERT INTO "public".users (id,first_name,email)
+INSERT INTO "public".users (id,name,email,gender,status)
 VALUES 
-(1,'Richard','richard.sivila.rios@gmail.com'),
-(2,'Carlos','carlos@gmail.com');
+(1,'Richard','richard.sivila.rios@gmail.com','masculino','active'),
+(2,'Carlos','carlos@gmail.com','masculino','active'),
+(3,'Daniel','daniel@gmail.com','masculino','active'),
+(4,'Adel','adel@gmail.com','masculino','active'),
+(2,'Jimena','jimena@gmail.com','femenino','active');
 
 INSERT INTO "public".roles (id_rol,cod_estado, nombre)
 VALUES 
@@ -29,7 +32,10 @@ VALUES
   (1,1, 'admin', 'admin', 1),
   (2,1, 'tecnico1', 'tecnico1', 2),
   (3,1, 'supervisor1', 'supervisor1', 3),
-  (4,1, 'usuario1', 'usuario1', 4);
+  (4,1, 'usuario1', 'usuario1', 4),
+  (5,1, 'usuario2', 'usuario2', 5),
+  (6,1, 'usuario3', 'usuario3', 6);
+
 
 -- Insertar datos en la tabla "public".usuario_roles
 INSERT INTO "public".usuario_roles (id_rol, usuario)

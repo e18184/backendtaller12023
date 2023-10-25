@@ -2,10 +2,7 @@ package com.example.demo.taller1proyecto.repository;
 
 import com.example.demo.taller1proyecto.modelo3.Menus;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 public interface MenusRepository extends JpaRepository<Menus, Long> {
 
