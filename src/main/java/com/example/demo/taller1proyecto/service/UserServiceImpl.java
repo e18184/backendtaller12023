@@ -15,6 +15,7 @@ import com.example.demo.taller1proyecto.repository.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
+
     @Autowired
     UserRepository userRepository;
 
@@ -36,6 +37,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(Long id) {
         userRepository.deleteById(id);
+
+    }
+
+    @Override
+    public User findTopByOrderByValorEnteroDesc() {
+        return userRepository.findTopByOrderByValorEnteroDesc();
     }
 
 }
