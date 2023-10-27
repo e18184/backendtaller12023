@@ -5,10 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.demo.taller1proyecto.modelo3.User;
 import com.example.demo.taller1proyecto.repository.UserRepository;
@@ -38,11 +35,6 @@ public class UserServiceImpl implements UserService {
     public void deleteById(Long id) {
         userRepository.deleteById(id);
 
-    }
-
-    @Override
-    public User findTopByOrderByValorEnteroDesc() {
-        return userRepository.findTopByOrderByValorEnteroDesc();
     }
 
 }
