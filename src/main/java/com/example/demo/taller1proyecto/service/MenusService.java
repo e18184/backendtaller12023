@@ -1,11 +1,16 @@
 package com.example.demo.taller1proyecto.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.example.demo.taller1proyecto.modelo3.Menus;
+import com.example.demo.taller1proyecto.modelo3.Procesos;
 
 public interface MenusService {
+
+    public List<Menus> getAllMenus();
+
+    public List<Procesos> getProcesosByMenuId(Long menuId);
+
     // void save(Menus menus);
 
     // List<Menus> getMenusList();

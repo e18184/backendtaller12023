@@ -1,4 +1,5 @@
 package com.example.demo.taller1proyecto.modelo3;
+
 import java.io.Serializable;
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,11 +11,9 @@ import lombok.*;
 @AllArgsConstructor
 @Data
 public class Roles implements Serializable {
-	@Column(name = "id_rol", nullable = false)
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_ROLES_ID_ROL_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_ROLES_ID_ROL_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "roles_id_rol_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_rol", unique = true)
 	private Integer id_rol;
 
 	@Column(name = "cod_estado", nullable = false)

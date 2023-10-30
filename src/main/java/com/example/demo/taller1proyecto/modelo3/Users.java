@@ -4,19 +4,20 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import lombok.*;
 
-@org.hibernate.annotations.Proxy(lazy = false)
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 @Entity
-@Table(name = "users")
-public class User implements Serializable {
+@org.hibernate.annotations.Proxy(lazy = false)
+@Table(name = "users", schema = "public")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class Users implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "ID", unique = true)
+    private Integer id;
+
     private String name;
     private String email;
     private String gender;
     private String status;
-
 }

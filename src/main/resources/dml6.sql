@@ -1,25 +1,8 @@
-INSERT INTO "public".users (id,name,email,gender,status)
+INSERT INTO users (name, email, gender, status)
 VALUES 
-(1,'Richard','richard.sivila.rios@gmail.com','masculino','active'),
-(2,'Carlos','carlos@gmail.com','masculino','active'),
-(3,'Daniel','daniel@gmail.com','masculino','active'),
-(4,'Adel','adel@gmail.com','masculino','active'),
-(5,'Jimena','jimena@gmail.com','femenino','active'),
-(6,'Richard segundo','richard.sivila.rios@gmail.com','masculino','active'),
-(7,'Carlos segundo','carlos@gmail.com','masculino','active'),
-(8,'Daniel segundo','daniel@gmail.com','masculino','active'),
-(9,'Adel segundo','adel@gmail.com','masculino','active'),
-(10,'Jimena segundo','jimena@gmail.com','femenino','active'),
-(11,'Richard tercero','richard.sivila.rios@gmail.com','masculino','active'),
-(12,'Carlos tercero','carlos@gmail.com','masculino','active'),
-(13,'Daniel tercero','daniel@gmail.com','masculino','active'),
-(14,'Adel tercero','adel@gmail.com','masculino','active'),
-(15,'Jimena tercero','jimena@gmail.com','femenino','active'),
-(16,'Richard cuarto','richard.sivila.rios@gmail.com','masculino','active'),
-(17,'Carlos cuarto','carlos@gmail.com','masculino','active'),
-(18,'Daniel cuarto','daniel@gmail.com','masculino','active'),
-(19,'Adel cuarto','adel@gmail.com','masculino','active'),
-(20,'Jimena cuarto','jimena@gmail.com','femenino','active');
+  ('Nombre del Usuario', 'correo@example.com', 'Masculino', 'Activo'),
+  ('Nombre del Usuario2', 'correo2@example.com', 'Masculino', 'Activo'),
+  ('Richard','richard.sivila.rios@gmail.com','masculino','active');
 
 INSERT INTO "public".roles (id_rol,cod_estado, nombre)
 VALUES 

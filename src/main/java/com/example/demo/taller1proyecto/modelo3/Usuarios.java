@@ -11,11 +11,9 @@ import lombok.*;
 @AllArgsConstructor
 @Data
 public class Usuarios implements Serializable {
-	@Column(name = "codu", nullable = false)
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_USUARIOS_CODU_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_USUARIOS_CODU_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "usuarios_codu_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "codu", unique = true)
 	private Integer codu;
 
 	@Column(name = "cod_estado", nullable = false)

@@ -1,12 +1,20 @@
 package com.example.demo.taller1proyecto.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.example.demo.taller1proyecto.modelo3.Roles;
-
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.taller1proyecto.modelo3.Menus;
+import com.example.demo.taller1proyecto.modelo3.Roles;
+
+@Repository
 public interface RolesRepository extends JpaRepository<Roles, Long> {
+
+    @Query("SELECT r.codm FROM Roles r WHERE r.id_rol = :roleId")
+    List<Menus> getMenusByRoles(@Param("roleId") Long roleId);
 
     /*
      * @Query("select DISTINCT r from Roles r JOIN Usuarios u ON r.id=u.id AND u.login=?1 and u.password=?2"

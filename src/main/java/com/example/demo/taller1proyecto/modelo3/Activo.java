@@ -12,11 +12,9 @@ import lombok.*;
 @AllArgsConstructor
 public class Activo implements Serializable {
 
-	@Column(name = "seq_activo", nullable = false)
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_ACTIVO_SEQ_ACTIVO_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_ACTIVO_SEQ_ACTIVO_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "activo_seq_activo_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "seq_activo", unique = true)
 	private Integer seq_activo;
 
 	@Column(name = "cod_estado", nullable = false)

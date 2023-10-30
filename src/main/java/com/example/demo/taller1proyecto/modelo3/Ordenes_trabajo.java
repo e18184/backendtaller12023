@@ -11,11 +11,9 @@ import lombok.*;
 @AllArgsConstructor
 
 public class Ordenes_trabajo implements Serializable {
-	@Column(name = "seq_orden_trabajo", nullable = false)
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_ORDENES_TRABAJO_SEQ_ORDEN_TRABAJO_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_ORDENES_TRABAJO_SEQ_ORDEN_TRABAJO_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "ordenes_trabajo_seq_orden_trabajo_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "seq_orden_trabajo", unique = true)
 	private Integer seq_orden_trabajo;
 
 	@Column(name = "cod_atendido", nullable = false)

@@ -11,11 +11,9 @@ import lombok.*;
 @AllArgsConstructor
 public class Tareas_mant_inspeccion_cronologica implements Serializable {
 
-	@Column(name = "seq_tarea_mant_inspeccion_cronologica", nullable = false)
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_TAREAS_MANT_INSPECCION_CRONOLOGICA_SEQ_TAREA_MANT_INSPECCION_CRONOLOGICA_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_TAREAS_MANT_INSPECCION_CRONOLOGICA_SEQ_TAREA_MANT_INSPECCION_CRONOLOGICA_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "tareas_mant_inspeccion_cronol_seq_tarea_mant_inspeccion_cro_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "seq_tarea_mant_inspeccion_cronologica", unique = true)
 	private Integer seq_tarea_mant_inspeccion_cronologica;
 
 	@Column(name = "cod_ejecucion", nullable = false, length = 20)

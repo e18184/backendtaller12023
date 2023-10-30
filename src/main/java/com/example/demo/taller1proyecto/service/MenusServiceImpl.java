@@ -1,18 +1,26 @@
 package com.example.demo.taller1proyecto.service;
 
+import com.example.demo.taller1proyecto.modelo3.Menus;
+import com.example.demo.taller1proyecto.modelo3.Procesos;
 import com.example.demo.taller1proyecto.repository.MenusRepository;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Optional;
-
-import com.example.demo.taller1proyecto.modelo3.Menus;
 
 @Service
 public class MenusServiceImpl implements MenusService {
     @Autowired
     MenusRepository menusRepo;
+
+    public List<Procesos> getProcesosByMenuId(Long menuId) {
+        return menusRepo.getProcesosByMenuId(menuId);
+    }
+
+    public List<Menus> getAllMenus() {
+        return menusRepo.findAll();
+    }
 
     // @Override
     // public void save(Menus menus) {

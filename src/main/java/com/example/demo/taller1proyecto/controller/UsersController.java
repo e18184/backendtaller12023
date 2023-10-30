@@ -3,6 +3,7 @@ package com.example.demo.taller1proyecto.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,25 +15,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.taller1proyecto.modelo3.User;
-import com.example.demo.taller1proyecto.service.UserService;
+import com.example.demo.taller1proyecto.modelo3.Users;
+import com.example.demo.taller1proyecto.service.UsersService;
 
 @RestController
 @RequestMapping("users")
-public class UserController {
-    private final UserService userService;
+public class UsersController {
+    private final UsersService userService;
 
-    public UserController(UserService userService) {
+    public UsersController(UsersService userService) {
         this.userService = userService;
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> getUsers() {
+    public ResponseEntity<List<Users>> getUsers() {
         try {
             Sort sortBy = Sort.by(new Sort.Order(Sort.Direction.ASC, "name").ignoreCase());
-            List<User> usuarios = userService.findAll(sortBy);
+            List<Users> usuarios = userService.findAll(sortBy);
             return new ResponseEntity<>(usuarios, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -40,12 +42,12 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id) {
+    public ResponseEntity<Users> findById(@PathVariable Long id) {
         try {
-            Optional<User> userOptional = userService.findById(id);
+            Optional<Users> userOptional = userService.findById(id);
 
             if (userOptional.isPresent()) {
-                User user = (User) userOptional.get();
+                Users user = (Users) userOptional.get();
                 System.out.println("usuario:" + user.toString());
                 return new ResponseEntity<>(user, HttpStatus.OK);
             } else {
@@ -57,28 +59,23 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@Validated @RequestBody User user) {
-
-        /*
-         * sdfd User userGuardada = userService.findTopByOrderByValorEnteroDesc(); if
-         * (userGuardada != null) {
-         * 
-         * Integer valormaximo = userGuardada.getId().intValue();
-         * userGuardada.setId(Long.valueOf(valormaximo + 1));
-         * userService.save(userGuardada); }
-         * 
-         * URI ubicacion =
-         * ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-         * .buildAndExpand(userGuardada.getId()).toUri(); return
-         * ResponseEntity.created(ubicacion).body(user);
-         */
-        userService.save(user);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<Users> createUser(@RequestBody Users user) {
+        try {
+            // Long maxId = userService.findMaxId().longValue();
+            // System.out.println("id max es: " + maxId);
+            // Long newId = (maxId != null) ? maxId + 1 : 1;
+            // System.out.println("newId es: " + newId);
+            // user.setId(newId);
+            userService.save(user);
+            return new ResponseEntity<>(user, HttpStatus.CREATED);
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Long id, @Validated @RequestBody User user) {
-        Optional<User> usuarioOpcional = userService.findById(id);
+    public ResponseEntity<Users> updateUser(@PathVariable Long id, @Validated @RequestBody Users user) {
+        Optional<Users> usuarioOpcional = userService.findById(id);
         if (!usuarioOpcional.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }
@@ -92,4 +89,10 @@ public class UserController {
         userService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/users")
+    public List<Users> getUsersByQuery(@RequestParam String model, @RequestParam String query) {
+        return userService.getUsersByColumn(model, query);
+    }
+
 }

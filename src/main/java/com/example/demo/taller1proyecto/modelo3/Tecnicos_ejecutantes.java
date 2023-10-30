@@ -10,11 +10,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Tecnicos_ejecutantes implements Serializable {
-	@Column(name = "seq_tecnico_ejecutante", nullable = false)
+
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_TECNICOS_EJECUTANTES_SEQ_TECNICO_EJECUTANTE_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_TECNICOS_EJECUTANTES_SEQ_TECNICO_EJECUTANTE_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "tecnicos_ejecutantes_seq_tecnico_ejecutante_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "seq_tecnico_ejecutante", unique = true)
 	private Integer seq_tecnico_ejecutante;
 
 	@Column(name = "cod_estado", nullable = false)

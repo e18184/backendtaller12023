@@ -9,12 +9,11 @@ import lombok.*;
 @Table(name = "menus", schema = "public")
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Menus implements Serializable {
-	@Column(name = "codm", nullable = false)
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_MENUS_CODM_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_MENUS_CODM_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "menus_codm_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "codm", unique = true)
 	private Integer codm;
 
 	@Column(name = "estado", nullable = false)

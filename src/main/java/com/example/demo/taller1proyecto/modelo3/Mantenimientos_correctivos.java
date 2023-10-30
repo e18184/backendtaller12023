@@ -10,11 +10,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Mantenimientos_correctivos implements Serializable {
-	@Column(name = "seq_mantenimiento_correctivo", nullable = false)
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_MANTENIMIENTOS_CORRECTIVOS_SEQ_MANTENIMIENTO_CORRECTIVO_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_MANTENIMIENTOS_CORRECTIVOS_SEQ_MANTENIMIENTO_CORRECTIVO_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "mantenimientos_correctivos_seq_mantenimiento_correctivo_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "seq_mantenimiento_correctivo", unique = true)
 	private Integer seq_mantenimiento_correctivo;
 
 	@Column(name = "cod_estado", nullable = false)

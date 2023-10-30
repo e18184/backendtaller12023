@@ -10,11 +10,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Fallas implements Serializable {
-	@Column(name = "id_falla", nullable = false)
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_FALLAS_ID_FALLA_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_FALLAS_ID_FALLA_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "fallas_id_falla_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_falla", unique = true)
 	private Integer id_falla;
 
 	@Column(name = "cod_estado", nullable = false)

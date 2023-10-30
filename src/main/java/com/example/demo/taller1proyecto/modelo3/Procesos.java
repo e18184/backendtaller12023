@@ -9,13 +9,11 @@ import lombok.*;
 @Table(name = "procesos", schema = "public")
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Data
 public class Procesos implements Serializable {
-	@Column(name = "codp", nullable = false)
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_PROCESOS_CODP_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_PROCESOS_CODP_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "procesos_codp_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "codp", unique = true)
 	private Integer codp;
 
 	@Column(name = "enlace", nullable = false, length = 60)

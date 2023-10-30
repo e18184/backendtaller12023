@@ -1,11 +1,21 @@
 package com.example.demo.taller1proyecto.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.demo.taller1proyecto.modelo3.Menus;
+import com.example.demo.taller1proyecto.repository.RolesRepository;
 
 @Service
 public class RolesServiceImpl implements RolesService {
-    // @Autowired
-    // RolesRepository rolesRepo;
+    @Autowired
+    RolesRepository rolesRepo;
+
+    public List<Menus> getMenusByRoles(Long roleId) {
+        return rolesRepo.getMenusByRoles(roleId);
+    }
 
     // @Override
     // public void save(Roles roles) {

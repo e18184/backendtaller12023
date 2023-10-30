@@ -1,8 +1,12 @@
 package com.example.demo.taller1proyecto.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.taller1proyecto.modelo3.Menus;
+import com.example.demo.taller1proyecto.modelo3.Procesos;
 import com.example.demo.taller1proyecto.service.MenusService;
 
 @RestController
@@ -11,6 +15,22 @@ public class MenusController {
 
     @Autowired
     MenusService menuService;
+
+    @GetMapping("/menus")
+    public List<Menus> getAllMenus() {
+        // Obtener todos los menús y devolverlos como respuesta
+        List<Menus> menus = menuService.getAllMenus();
+        return menus;
+    }
+
+    @GetMapping("/menus/{menuId}")
+    public List<Procesos> getProcesosByMenuId(@PathVariable Integer menuId) {
+        // Obtener los procesos asociados a un menú por su ID y devolverlos como
+        // respuesta
+        List<Procesos> procesos = menuService.getProcesosByMenuId(menuId.longValue());
+        System.out.println(procesos);
+        return procesos;
+    }
 
     // @GetMapping("/{login}/{password}/{idrol}")
     // public ResponseEntity<List<Menus>> findRoles(@PathVariable String login,

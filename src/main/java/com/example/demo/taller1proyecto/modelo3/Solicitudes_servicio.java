@@ -10,11 +10,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Solicitudes_servicio implements Serializable {
-	@Column(name = "seq_solicitud_servicio", nullable = false)
+
 	@Id
-	@GeneratedValue(generator = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_SOLICITUDES_SERVICIO_SEQ_SOLICITUD_SERVICIO_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name = "COM_EXAMPLE_DEMO_TALLER1PROYECTO_MODELO3_SOLICITUDES_SERVICIO_SEQ_SOLICITUD_SERVICIO_GENERATOR", strategy = "sequence", parameters = {
-			@org.hibernate.annotations.Parameter(name = "sequence", value = "solicitudes_servicio_seq_solicitud_servicio_seq") })
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "seq_solicitud_servicio", unique = true)
 	private Integer seq_solicitud_servicio;
 
 	@Column(name = "cod_estado", nullable = false)
