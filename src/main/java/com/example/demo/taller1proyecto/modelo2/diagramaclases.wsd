@@ -1,0 +1,136 @@
+@startuml proyecto2023
+
+!define ENTITY class
+
+ENTITY Persona {
+  seq_persona: int
+  cedula_identidad: varchar(15)
+  nombres: varchar(40)
+  apellido_pateno: varchar(40)
+  apellido_materno: varchar(40)
+  fotografia: varchar(255)
+  telefono_celular: varchar(20)
+  cod_tipo: varchar(1)
+  cod_estado: int
+}
+
+ENTITY Usuario {
+  usuarios: varchar(20)
+  contraseña: varchar(200)
+  cod_estado: int
+  seq_persona: int
+}
+
+ENTITY Rol {
+  id_rol: int
+  nombre: varchar(40)
+  cod_estado: int
+}
+
+ENTITY UsuarioRol {
+  usuario: varchar(20)
+  id_rol: int
+}
+
+ENTITY Falla {
+  id_falla: int
+  nombre: varchar(250)
+  cod_estado: int
+}
+
+ENTITY SolicitudServicio {
+  seq_solicitud_servicio: int
+  fecha: date
+  descripcion_problema: varchar(1500)
+  seq_perona_solicita: int
+  cod_estado: int
+}
+
+ENTITY Activo {
+  seq_activo: int
+  id_etiqueta_fisica: varchar(100)
+  nombre: varchar(100)
+  marca: varchar(100)
+  modelo: varchar(100)
+  comentarios: varchar(500)
+  cod_estado: int
+}
+
+ENTITY RecepcionActivo {
+  seq_recepcion_activo: int
+  fecha: date
+  seq_persona_recepcionante: int
+  seq_solicitud_servicio: int
+  seq_activo: int
+  cod_estado: int
+}
+
+ENTITY OrdenTrabajo {
+  seq_orden_trabajo: int
+  cod_tipo_mantenimiento: varchar(4)
+  numero_orden_trabajo: varchar(50)
+  fecha_emision: date
+  ubicacion_activo: varchar(250)
+  cod_atendido: int
+  seq_persona_planificante: int
+  seq_solicitud_servicio: int
+  cod_estado: int
+}
+
+ENTITY OrdenTrabajoActivo {
+  seq_orden_trabajo: int
+  seq_activo: int
+}
+
+ENTITY MantenimientoCorrectivo {
+  seq_mantenimiento_correctivo: int
+  fecha_finalizacion: date
+  id_falla: int
+  comentario_deteccion_falla: varchar(1500)
+  descripcion_causa: varchar(1500)
+  cod_tipo_solucion: varchar(20)
+  descripcion_solucion: varchar(1500)
+  duracion: varchar(6)
+  comentarios: varchar(2500)
+  seq_activo: int
+  seq_orden_trabajo: int
+  cod_estado: int
+}
+
+ENTITY TecnicoEjecutante {
+  seq_tecnico_ejecutante: int
+  fecha_de_asignacion: date
+  cod_responsable: int
+  seq_persona_ejecutante: int
+  seq_orden_trabajo: int
+  cod_estado: int
+}
+
+ENTITY TareaMantInspeccionCronologica {
+  seq_tarea_mant_inspeccion_cronologica: int
+  cod_ejecucion: varchar(20)
+  fecha: date
+  hora: time
+  descripcion: varchar(500)
+  fotografia: varchar(255)
+  seq_mantenimiento_correctivo: int
+  cod_estado: int
+}
+
+Persona --|{ Usuario : seq_persona
+Usuario --|{ UsuarioRol : usuarios
+Rol --|{ UsuarioRol : id_rol
+Usuario --|{ TecnicoEjecutante : seq_persona_ejecutante
+Persona --|{ SolicitudServicio : seq_perona_solicita
+SolicitudServicio --|{ OrdenTrabajo : seq_solicitud_servicio
+OrdenTrabajo --|{ OrdenTrabajoActivo : seq_orden_trabajo
+Activo --|{ RecepcionActivo : seq_activo
+SolicitudServicio --|{ RecepcionActivo : seq_solicitud_servicio
+Activo --|{ OrdenTrabajoActivo : seq_activo
+OrdenTrabajo --|{ MantenimientoCorrectivo : seq_orden_trabajo
+Activo --|{ MantenimientoCorrectivo : seq_activo
+MantenimientoCorrectivo --|{ TareaMantInspeccionCronologica : seq_mantenimiento_correctivo
+
+Falla --|{ MantenimientoCorrectivo : id_falla
+
+@enduml
