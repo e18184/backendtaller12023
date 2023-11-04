@@ -22,7 +22,7 @@
 // public class Procesos implements Serializable {
 // @Id
 // @Column(name = "codm")
-// @GeneratedValue(generator = "PROCESOS_CODP")
+// @GeneratedValue(generator = "PROCESOSCODP")
 // Integer codp;
 // @Column(name = "nombre", length = 30)
 // String nombre;

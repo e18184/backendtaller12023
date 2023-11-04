@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 import com.example.demo.taller1proyecto.modelo3.Menus;
-// import com.example.demo.taller1proyecto.modelo3.Usuarios;
 
 @RestController
 @RequestMapping("rolescontroller")
@@ -29,7 +28,7 @@ public class RolesController {
     @GetMapping("/roles/{roleId}")
     public List<Menus> getMenusByRoles(@PathVariable Integer roleId) {
         // Lógica para obtener los menús asociados a un rol específico
-        return rolesService.getMenusByRoles(roleId.longValue());
+        return rolesService.getMenusByRoles(roleId);
     }
 
     // @GetMapping("")
@@ -45,7 +44,7 @@ public class RolesController {
     // */
     // return new ResponseEntity<>(usuariosroles, HttpStatus.OK);
     // } catch (Exception e) {
-    // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
     // }
 
     // }
@@ -60,12 +59,12 @@ public class RolesController {
 
     // // return new ResponseEntity<>(rol, HttpStatus.OK);
     // // } catch (Exception e) {
-    // // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
     // // }
     // // }
 
     // // @PutMapping("/actualizar/{id}")
-    // // public ResponseEntity<Roles> actualizar(@PathVariable("id") Long id,
+    // // public ResponseEntity<Roles> actualizar(@PathVariable("id") Integer id,
     // // @RequestBody Roles roles) {
     // // try {
     // // Roles rol = rolesService.findById(id).get();
@@ -80,7 +79,7 @@ public class RolesController {
     // // return new ResponseEntity<Roles>(rol, HttpStatus.OK);
     // // } catch (Exception e) {
 
-    // // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
 
     // // }
 
@@ -90,9 +89,9 @@ public class RolesController {
     // public ResponseEntity<Roles> eliminar(@PathVariable("id") long id) {
     // try {
     // rolesService.deleteById(id);
-    // return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    // return new ResponseEntity<>(HttpStatus.NOCONTENT);
     // } catch (Exception e) {
-    // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
     // }
     // }
 
@@ -108,9 +107,9 @@ public class RolesController {
 
     // // }
 
-    // // return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    // // return new ResponseEntity<>(HttpStatus.NOCONTENT);
     // // } catch (Exception e) {
-    // // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
     // // }
     // /**
     // * @param usuarios
@@ -124,7 +123,7 @@ public class RolesController {
     // roles.getUsuario();
     // return new ResponseEntity<List<Roles>>(listaroles, HttpStatus.OK);
     // } catch (Exception e) {
-    // return new ResponseEntity<List<Roles>>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // return new ResponseEntity<List<Roles>>(HttpStatus.INTERNALSERVERERROR);
     // }
     // }
 }

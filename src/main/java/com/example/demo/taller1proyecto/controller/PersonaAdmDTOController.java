@@ -36,7 +36,7 @@
  * (Roles roles : usuarios) { Roles usuariorol = new Roles();
  * usuariorol.setNombre(roles.getNombre()); usuariosroles.add(usuariorol); }
  * return new ResponseEntity<>(usuariosroles, HttpStatus.OK); } catch (Exception
- * e) { return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); }
+ * e) { return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR); }
  * 
  * }
  * 

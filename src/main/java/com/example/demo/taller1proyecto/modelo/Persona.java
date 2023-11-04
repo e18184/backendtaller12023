@@ -17,15 +17,15 @@
 // @AllArgsConstructor
 // @NoArgsConstructor
 // @Entity
-// @Table(name = "t_persona")
+// @Table(name = "tpersona")
 // @Comment("Representa la Entidad Persona")
 // public class Persona implements Serializable {
 // @Id
 // @Column(name = "codu")
-// @GeneratedValue(generator = "USUARIO_CODR")
+// @GeneratedValue(generator = "USUARIOCODR")
 // Integer codp;
 
-// @Column(name = "cedula_identidad", length = 15, nullable = true)
+// @Column(name = "cedulaidentidad", length = 15, nullable = true)
 // @Comment("Cedula de la identidad de la persona")
 // String cedula;
 
@@ -33,11 +33,11 @@
 // @Comment("Nombre de la persona")
 // String nombre;
 
-// @Column(name = "apellido_paterno", length = 40, nullable = false)
+// @Column(name = "apellidopaterno", length = 40, nullable = false)
 // @Comment("Apellido paterno de la persona")
 // String ap;
 
-// @Column(name = "apellido_materno", length = 40, nullable = false)
+// @Column(name = "apellidomaterno", length = 40, nullable = false)
 // @Comment("Apellido materno de la persona")
 // String am;
 
@@ -56,11 +56,11 @@
 // @Comment("direcion de la persona")
 // String direc;
 
-// @Column(name = "telefono_celular", length = 20, nullable = false)
+// @Column(name = "telefonocelular", length = 20, nullable = false)
 // @Comment("Telefono o celular de la persona")
 // String telef;
 
-// @Column(name = "cod_tipo", length = 1, nullable = true)
+// @Column(name = "codtipo", length = 1, nullable = true)
 // @org.hibernate.annotations.ColumnDefault("1")
 // @Comment("parametrico de estado 1(ACTIVO) 0(INACTIVO)")
 // Integer tipo;

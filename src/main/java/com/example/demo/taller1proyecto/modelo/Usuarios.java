@@ -22,13 +22,13 @@
 // @AllArgsConstructor
 // @NoArgsConstructor
 // @Entity
-// @Table(name = "t_usuarios")
+// @Table(name = "tusuarios")
 // @Comment("Datos del usuario")
 // @Data
 // public class Usuarios implements Serializable {
 // @Id
 // @Column(name = "codu")
-// @GeneratedValue(generator = "USUARIOS_CODU")
+// @GeneratedValue(generator = "USUARIOSCODU")
 // Integer id;
 
 // @Column(name = "login", length = 30, unique = true)
@@ -44,8 +44,8 @@
 
 // @Comment("Campo de la relacion muchos a muchos")
 // @ManyToMany(fetch = FetchType.EAGER)
-// @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name =
-// "usuarios_id"), inverseJoinColumns = @JoinColumn(name = "roles_id"))
+// @JoinTable(name = "usuariosroles", joinColumns = @JoinColumn(name =
+// "usuariosid"), inverseJoinColumns = @JoinColumn(name = "rolesid"))
 // List<Roles> roles;
 
 // @Comment("Campo que relaciona a una persona con un usuario")

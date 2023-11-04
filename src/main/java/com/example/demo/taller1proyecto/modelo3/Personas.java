@@ -13,22 +13,22 @@ import lombok.*;
 public class Personas implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "seq_persona", unique = true)
-	private Integer seq_persona;
-	@Column(name = "apellido_materno", nullable = true, length = 40)
-	private String apellido_materno;
+	@Column(name = "seqpersona", unique = true)
+	private Integer seqpersona;
+	@Column(name = "apellidomaterno", nullable = true, length = 40)
+	private String apellidomaterno;
 
-	@Column(name = "apellido_paterno", nullable = false, length = 40)
-	private String apellido_paterno;
+	@Column(name = "apellidopaterno", nullable = false, length = 40)
+	private String apellidopaterno;
 
-	@Column(name = "cedula_identidad", nullable = true, length = 15)
-	private String cedula_identidad;
+	@Column(name = "cedulaidentidad", nullable = true, length = 15)
+	private String cedulaidentidad;
 
-	@Column(name = "cod_estado", nullable = false)
-	private Integer cod_estado = Integer.valueOf(1);
+	@Column(name = "codestado", nullable = false)
+	private Integer codestado = Integer.valueOf(1);
 
-	@Column(name = "cod_tipo", nullable = false, length = 1)
-	private String cod_tipo;
+	@Column(name = "codtipo", nullable = false, length = 1)
+	private String codtipo;
 
 	@Column(name = "fotografia", nullable = true, length = 255)
 	private String fotografia;
@@ -36,28 +36,28 @@ public class Personas implements Serializable {
 	@Column(name = "nombres", nullable = false, length = 40)
 	private String nombres;
 
-	@Column(name = "telefono_celular", nullable = true, length = 20)
-	private String telefono_celular;
+	@Column(name = "telefonocelular", nullable = true, length = 20)
+	private String telefonocelular;
 
-	@OneToMany(mappedBy = "seq_persona_recepcionante", targetEntity = com.example.demo.taller1proyecto.modelo3.Recepciones_activo.class)
+	@OneToMany(mappedBy = "seqpersonarecepcionante", targetEntity = com.example.demo.taller1proyecto.modelo3.Recepcionesactivo.class)
 	@org.hibernate.annotations.Cascade({ org.hibernate.annotations.CascadeType.SAVE_UPDATE,
 			org.hibernate.annotations.CascadeType.LOCK })
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-	private java.util.Set recepciones_activo = new java.util.HashSet();
+	private java.util.Set recepcionesactivo = new java.util.HashSet();
 
-	@OneToMany(mappedBy = "seq_persona_solicita", targetEntity = com.example.demo.taller1proyecto.modelo3.Solicitudes_servicio.class)
+	@OneToMany(mappedBy = "seqpersonasolicita", targetEntity = com.example.demo.taller1proyecto.modelo3.Solicitudeservicio.class)
 	@org.hibernate.annotations.Cascade({ org.hibernate.annotations.CascadeType.SAVE_UPDATE,
 			org.hibernate.annotations.CascadeType.LOCK })
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-	private java.util.Set solicitudes_servicio = new java.util.HashSet();
+	private java.util.Set solicitudesservicio = new java.util.HashSet();
 
-	@OneToMany(mappedBy = "seq_persona_ejecutante", targetEntity = com.example.demo.taller1proyecto.modelo3.Tecnicos_ejecutantes.class)
+	@OneToMany(mappedBy = "seqpersonaejecutante", targetEntity = com.example.demo.taller1proyecto.modelo3.Tecnicosejecutantes.class)
 	@org.hibernate.annotations.Cascade({ org.hibernate.annotations.CascadeType.SAVE_UPDATE,
 			org.hibernate.annotations.CascadeType.LOCK })
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-	private java.util.Set tecnicos_ejecutantes = new java.util.HashSet();
+	private java.util.Set tecnicosejecutantes = new java.util.HashSet();
 
-	@OneToMany(mappedBy = "seq_persona", targetEntity = com.example.demo.taller1proyecto.modelo3.Usuarios.class)
+	@OneToMany(mappedBy = "seqpersona", targetEntity = com.example.demo.taller1proyecto.modelo3.Usuarios.class)
 	@org.hibernate.annotations.Cascade({ org.hibernate.annotations.CascadeType.SAVE_UPDATE,
 			org.hibernate.annotations.CascadeType.LOCK })
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)

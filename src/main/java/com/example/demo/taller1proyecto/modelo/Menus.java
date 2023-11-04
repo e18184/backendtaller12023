@@ -22,12 +22,12 @@
 // @AllArgsConstructor
 // @NoArgsConstructor
 // @Entity
-// @Table(name = "t_menus")
+// @Table(name = "tmenus")
 // @Comment("Menus del Sistema")
 // public class Menus implements Serializable {
 // @Id
 // @Column(name = "codm")
-// @GeneratedValue(generator = "MENUS_CODM")
+// @GeneratedValue(generator = "MENUSCODM")
 // Integer codm;
 
 // @Column(name = "nombre", length = 30)

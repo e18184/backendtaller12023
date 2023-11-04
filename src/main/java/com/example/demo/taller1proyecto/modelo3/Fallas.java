@@ -12,11 +12,11 @@ import lombok.*;
 public class Fallas implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_falla", unique = true)
-	private Integer id_falla;
+	@Column(name = "idfalla", unique = true)
+	private Integer idfalla;
 
-	@Column(name = "cod_estado", nullable = false)
-	private Integer cod_estado = Integer.valueOf(1);
+	@Column(name = "codestado", nullable = false)
+	private Integer codestado = Integer.valueOf(1);
 
 	@Column(name = "nombre", nullable = false, length = 250)
 	private String nombre;

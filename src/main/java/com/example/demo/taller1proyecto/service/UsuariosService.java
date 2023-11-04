@@ -11,7 +11,7 @@ public interface UsuariosService {
 
     // List<Usuarios> getUsuariosList();
 
-    // boolean usuariosFindById(Long id);
+    // boolean usuariosFindById(Integer id);
 
     List<Usuarios> getUsuariosUsuarioContrasenaSql(String usuario, String contrasena);
 

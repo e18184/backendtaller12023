@@ -14,7 +14,7 @@ public class MenusServiceImpl implements MenusService {
     @Autowired
     MenusRepository menusRepo;
 
-    public List<Procesos> getProcesosByMenuId(Long menuId) {
+    public List<Procesos> getProcesosByMenuId(Integer menuId) {
         return menusRepo.getProcesosByMenuId(menuId);
     }
 
@@ -33,16 +33,17 @@ public class MenusServiceImpl implements MenusService {
     // }
 
     // @Override
-    // public List<Menus> findByLoginAndPassword(String login, String password, Long
+    // public List<Menus> findByLoginAndPassword(String login, String password,
+    // Integer
     // idrol) {
     // return menusRepo.findByLoginAndPassword(login, password, idrol);
     // }
 
-    // public Optional<Menus> findById(Long id) {
+    // public Optional<Menus> findById(Integer id) {
     // return menusRepo.findById(id);
     // }
 
-    // public void deleteById(Long id) {
+    // public void deleteById(Integer id) {
     // menusRepo.deleteById(id);
     // }
 

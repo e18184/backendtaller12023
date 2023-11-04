@@ -14,7 +14,7 @@ public class Procesos implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codp", unique = true)
-	private Integer codp;
+	private Integer codP;
 
 	@Column(name = "enlace", nullable = false, length = 60)
 	private String enlace;

@@ -28,12 +28,12 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public Optional<Users> findById(Long id) {
+    public Optional<Users> findById(Integer id) {
         return userRepository.findById(id);
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         userRepository.deleteById(id);
 
     }
@@ -42,17 +42,17 @@ public class UsersServiceImpl implements UsersService {
     public List<Users> getUsersByColumn(String column, String query) {
         query = "%" + query + "%";
         switch (column) {
-        case "name":
-            System.out.println(userRepository.findByNameLike(query));
-            return userRepository.findByNameLike(query);
-        case "email":
-            return userRepository.findByEmailLike(query);
-        case "gender":
-            return userRepository.findByGenderLike(query);
-        case "status":
-            return userRepository.findByStatusLike(query);
-        default:
-            return Collections.emptyList(); // Devuelve una lista vacía si no se proporciona una columna válida
+            case "name":
+                System.out.println(userRepository.findByNameLike(query));
+                return userRepository.findByNameLike(query);
+            case "email":
+                return userRepository.findByEmailLike(query);
+            case "gender":
+                return userRepository.findByGenderLike(query);
+            case "status":
+                return userRepository.findByStatusLike(query);
+            default:
+                return Collections.emptyList(); // Devuelve una lista vacía si no se proporciona una columna válida
         }
     }
 

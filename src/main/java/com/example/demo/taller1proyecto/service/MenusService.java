@@ -9,17 +9,17 @@ public interface MenusService {
 
     public List<Menus> getAllMenus();
 
-    public List<Procesos> getProcesosByMenuId(Long menuId);
+    public List<Procesos> getProcesosByMenuId(Integer menuId);
 
     // void save(Menus menus);
 
     // List<Menus> getMenusList();
 
-    // List<Menus> findByLoginAndPassword(String login, String password, Long
+    // List<Menus> findByLoginAndPassword(String login, String password, Integer
     // idrol);
 
-    // Optional<Menus> findById(Long id);
+    // Optional<Menus> findById(Integer id);
 
-    // public void deleteById(Long id);
+    // public void deleteById(Integer id);
 
 }

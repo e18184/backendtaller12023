@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.example.demo.taller1proyecto.modelo3.Usuarios;
 import java.util.List;
 
-public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
+public interface UsuariosRepository extends JpaRepository<Usuarios, Integer> {
     // // listar nombre, ap, am, usuario, contrasena
     // // JPQL trabaja en las clases y no en las tablas
     // // 1.- Si la consulta es SQL se estaria trabajando con las tablas
@@ -17,7 +17,7 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
     // // consulta SQL
     // // lo que hacemos en el pgadmin
     // // 1ra forma
-    @Query(value = "select codu, usuario, contrasena, cod_estado,seq_persona from usuario_roles u where u.usuario=?1 and u.contrasena=?2", nativeQuery = true)
+    @Query(value = "select codu, usuario, contrasena, codestado,seqpersona from usuarioroles u where u.usuario=?1 and u.contrasena=?2", nativeQuery = true)
     public List<Usuarios> getUsuariosUsuarioContrasenaSql(String usuario, String contrasena);
 
     // // consulta JPQL
@@ -40,7 +40,7 @@ public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
     // public List<Usuarios> findByLoginLike(String login);
 
     // // necesitamos un metodo que me devuelva el objeto
-    public List<Usuarios> findByCodu(Long id);
+    public List<Usuarios> findByCodu(Integer id);
 
     public List<Usuarios> findAll(Sort sort);
 

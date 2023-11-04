@@ -16,13 +16,13 @@
 // @AllArgsConstructor
 // @NoArgsConstructor
 // @Entity
-// @Table(name = "t_usuarios")
+// @Table(name = "tusuarios")
 // @Comment("Datos del usuario")
 // @Data
 // public class SolicitudesServicio implements Serializable {
 // @Id
 // @Column(name = "codu")
-// @GeneratedValue(generator = "SOLICITUDESSERVICIO_CODU")
+// @GeneratedValue(generator = "SOLICITUDESSERVICIOCODU")
 // @Comment("Sequencia de Solicitud de Servicio")
 // Integer id;
 
@@ -30,9 +30,9 @@
 // @Comment("Fecha de Solicitud de Servicio")
 // Date fecha;
 
-// @Column(name = "descripcion_problema", length = 250)
+// @Column(name = "descripcionproblema", length = 250)
 // @Comment("Descripcion de problema de solicitud de servicio")
-// String descripcion_problema;
+// String descripcionproblema;
 
 // @Comment("Si esta activo o no el usuario")
 // Integer estado;

@@ -11,9 +11,9 @@ public interface UsersService {
 
     public Users save(Users user);
 
-    public Optional<Users> findById(Long id);
+    public Optional<Users> findById(Integer id);
 
-    public void deleteById(Long id);
+    public void deleteById(Integer id);
 
     public List<Users> getUsersByColumn(String column, String query);
 

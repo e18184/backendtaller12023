@@ -25,7 +25,7 @@ public class UsuariosServiceImpl implements UsuariosService {
     // return usuariosRepo.findAll();
     // }
 
-    // public boolean usuariosFindById(Long id) {
+    // public boolean usuariosFindById(Integer id) {
 
     // return usuariosRepo.findById(id).isPresent();
     // }
@@ -47,7 +47,7 @@ public class UsuariosServiceImpl implements UsuariosService {
 
     // }
 
-    public List<Usuarios> findByCodU(Long codu) {
+    public List<Usuarios> findByCodU(Integer codu) {
         return usuariosRepo.findByCodu(codu);
     }
 

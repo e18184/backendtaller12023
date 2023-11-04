@@ -27,7 +27,7 @@ public class UsuarioController {
             List<Usuarios> usuarios = usuarioService.findAll(sortBy);
             // Iterar sobre la lista de usuarios y establecer las relaciones a null
             for (Usuarios usuario : usuarios) {
-                usuario.setId_rol(null);
+                usuario.setIdrol(null);
 
             }
             return new ResponseEntity<>(usuarios, HttpStatus.OK);
@@ -43,7 +43,7 @@ public class UsuarioController {
             // Iterar sobre la lista de usuarios y establecer las relaciones a null
             for (Usuarios usuario : usuarios) {
 
-                usuario.setId_rol(null);
+                usuario.setIdrol(null);
 
                 // usuario.getRoles() Set
 
@@ -62,13 +62,13 @@ public class UsuarioController {
     // // SELECT
     // // u.login, u.password, p.nombre, r.nombre
     // // FROM
-    // // t_persona p, t_usuarios u, usuarios_roles ur,
-    // // t_roles r
+    // // tpersona p, tusuarios u, usuariosroles ur,
+    // // troles r
     // // WHERE
     // // p.codu = u.codu AND
-    // // u.codu=ur.usuarios_id
+    // // u.codu=ur.usuariosid
     // // AND
-    // // ur.roles_id = r.codr;
+    // // ur.rolesid = r.codr;
     // Sort sort = Sort.by(Sort.Direction.ASC, "login");
 
     // List<Usuarios> usuarios = usuarioService.findAll(sort);
@@ -93,7 +93,7 @@ public class UsuarioController {
     // return new ResponseEntity<>(usuariosDTO, HttpStatus.OK);
 
     // } catch (Exception e) {
-    // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
     // }
     // }
 
@@ -105,7 +105,7 @@ public class UsuarioController {
             List<Usuarios> usuarios = usuarioService.findByUsuarioAndContrasena(usuario, contrasena);
             // // Iterar sobre la lista de usuarios y establecer las relaciones a null
             for (Usuarios usuarioss : usuarios) {
-                usuarioss.setId_rol(null);
+                usuarioss.setIdrol(null);
             }
             return new ResponseEntity<>(usuarios, HttpStatus.OK);
         } catch (Exception e) {

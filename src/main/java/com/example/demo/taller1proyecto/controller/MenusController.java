@@ -35,7 +35,7 @@ public class MenusController {
     // @GetMapping("/{login}/{password}/{idrol}")
     // public ResponseEntity<List<Menus>> findRoles(@PathVariable String login,
     // @PathVariable String password,
-    // @PathVariable Long idrol) {
+    // @PathVariable Integer idrol) {
     // try {
 
     // List<Menus> usuarios = menuService.findByLoginAndPassword(login, password,
@@ -50,7 +50,7 @@ public class MenusController {
     // }
     // return new ResponseEntity<>(usuariosmenus, HttpStatus.OK);
     // } catch (Exception e) {
-    // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
     // }
     // }
 
@@ -65,12 +65,12 @@ public class MenusController {
 
     // return new ResponseEntity<>(menu, HttpStatus.OK);
     // } catch (Exception e) {
-    // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
     // }
     // }
 
     // @PutMapping("/actualizar/{id}")
-    // public ResponseEntity<Menus> actualizar(@PathVariable("id") Long id,
+    // public ResponseEntity<Menus> actualizar(@PathVariable("id") Integer id,
     // @RequestBody Menus menus) {
     // try {
     // Menus menu = menuService.findById(id).get();
@@ -85,7 +85,7 @@ public class MenusController {
     // return new ResponseEntity<Menus>(menu, HttpStatus.OK);
     // } catch (Exception e) {
 
-    // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
 
     // }
 
@@ -96,9 +96,9 @@ public class MenusController {
     // try {
 
     // menuService.deleteById(id);
-    // return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    // return new ResponseEntity<>(HttpStatus.NOCONTENT);
     // } catch (Exception e) {
-    // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
     // }
     // }
 
@@ -114,9 +114,9 @@ public class MenusController {
 
     // }
 
-    // return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    // return new ResponseEntity<>(HttpStatus.NOCONTENT);
     // } catch (Exception e) {
-    // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    // return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
     // }
     // }
 

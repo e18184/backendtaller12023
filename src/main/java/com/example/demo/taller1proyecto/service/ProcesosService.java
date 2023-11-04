@@ -8,7 +8,7 @@ public interface ProcesosService {
 
     List<Procesos> getProcesosList();
 
-    // List<Procesos> findByLoginAndPassword(String login, String password, Long
-    // idrol, Long idmenu);
+    // List<Procesos> findByLoginAndPassword(String login, String password, Integer
+    // idrol, Integer idmenu);
 
 }

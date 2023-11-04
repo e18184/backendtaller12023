@@ -16,8 +16,8 @@ public class Usuarios implements Serializable {
 	@Column(name = "codu", unique = true)
 	private Integer codu;
 
-	@Column(name = "cod_estado", nullable = false)
-	private Integer cod_estado = Integer.valueOf(1);
+	@Column(name = "codestado", nullable = false)
+	private Integer codestado = Integer.valueOf(1);
 
 	@Column(name = "usuario", nullable = true, length = 30)
 	private String usuario;
@@ -28,14 +28,14 @@ public class Usuarios implements Serializable {
 	@ManyToOne(targetEntity = com.example.demo.taller1proyecto.modelo3.Personas.class, fetch = FetchType.LAZY)
 	@org.hibernate.annotations.Cascade({ org.hibernate.annotations.CascadeType.LOCK })
 	@JoinColumns(value = {
-			@JoinColumn(name = "seq_persona", referencedColumnName = "seq_persona", nullable = false) }, foreignKey = @ForeignKey(name = "usuarios_seq_persona_fkey"))
-	private com.example.demo.taller1proyecto.modelo3.Personas seq_persona;
+			@JoinColumn(name = "seqpersona", referencedColumnName = "seqpersona", nullable = false) }, foreignKey = @ForeignKey(name = "usuariosseqpersonafkey"))
+	private com.example.demo.taller1proyecto.modelo3.Personas seqpersona;
 
 	@ManyToMany(targetEntity = com.example.demo.taller1proyecto.modelo3.Roles.class)
 	@org.hibernate.annotations.Cascade({ org.hibernate.annotations.CascadeType.SAVE_UPDATE,
 			org.hibernate.annotations.CascadeType.LOCK })
-	@JoinTable(name = "usuario_roles", schema = "public", joinColumns = {
-			@JoinColumn(name = "usuario") }, inverseJoinColumns = { @JoinColumn(name = "id_rol") })
+	@JoinTable(name = "usuarioroles", schema = "public", joinColumns = {
+			@JoinColumn(name = "usuario") }, inverseJoinColumns = { @JoinColumn(name = "idrol") })
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-	private java.util.Set id_rol = new java.util.HashSet();
+	private java.util.Set idrol = new java.util.HashSet();
 }

@@ -11,10 +11,10 @@ import com.example.demo.taller1proyecto.modelo3.Menus;
 import com.example.demo.taller1proyecto.modelo3.Roles;
 
 @Repository
-public interface RolesRepository extends JpaRepository<Roles, Long> {
+public interface RolesRepository extends JpaRepository<Roles, Integer> {
 
-    @Query("SELECT r.codm FROM Roles r WHERE r.id_rol = :roleId")
-    List<Menus> getMenusByRoles(@Param("roleId") Long roleId);
+    @Query("SELECT r.codm FROM Roles r WHERE r.idrol = :roleId")
+    List<Menus> getMenusByRoles(@Param("roleId") Integer roleId);
 
     /*
      * @Query("select DISTINCT r from Roles r JOIN Usuarios u ON r.id=u.id AND u.login=?1 and u.password=?2"
@@ -23,7 +23,7 @@ public interface RolesRepository extends JpaRepository<Roles, Long> {
     // public List<Roles> findByLoginAndPassword(String login, String password);
 
     /*
-     * @Query("SELECT DISTINCT r FROM Roles r JOIN r.usuario_roles u " +
+     * @Query("SELECT DISTINCT r FROM Roles r JOIN r.usuarioroles u " +
      * "WHERE u.login = ?1 AND u.password = ?2") List<Roles>
      * findByLoginAndPassword(String login, String password);
      */

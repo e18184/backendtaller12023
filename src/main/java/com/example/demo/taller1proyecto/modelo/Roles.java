@@ -25,12 +25,12 @@
 // @Entity
 // @NoArgsConstructor
 // @AllArgsConstructor
-// @Table(name = "t_roles")
+// @Table(name = "troles")
 // @Comment("Roles que tiene un usuario")
 // public class Roles implements Serializable {
 // @Id
 // @Column(name = "codr")
-// @GeneratedValue(generator = "ROLES_CODR")
+// @GeneratedValue(generator = "ROLESCODR")
 // Integer codr;
 // @Column(name = "nombre", length = 30)
 // String nombre;
@@ -39,8 +39,8 @@
 
 // @ManyToMany(fetch = FetchType.EAGER)
 // @JsonIgnore
-// @JoinTable(name = "roles_menu", joinColumns = @JoinColumn(name = "roles_id"),
-// inverseJoinColumns = @JoinColumn(name = "menus_id"))
+// @JoinTable(name = "rolesmenu", joinColumns = @JoinColumn(name = "rolesid"),
+// inverseJoinColumns = @JoinColumn(name = "menusid"))
 // // Set<Menus> menus = new HashSet<Menus>();
 // List<Menus> menus;
 // @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)

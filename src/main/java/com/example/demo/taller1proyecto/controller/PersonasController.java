@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.taller1proyecto.service.PersonasService;
-import com.example.demo.taller1proyecto.service.UsersService;
 import com.example.demo.taller1proyecto.modelo3.Personas;
 import com.example.demo.taller1proyecto.modelo3.Users;
 
@@ -35,7 +34,7 @@ public class PersonasController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Personas> findById(@PathVariable Long id) {
+    public ResponseEntity<Personas> findById(@PathVariable Integer id) {
         try {
             Optional<Personas> personasOptional = personasService.findById(id);
 
@@ -62,19 +61,19 @@ public class PersonasController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Users> updatePersonas(@PathVariable Long id, @Validated @RequestBody Personas personas) {
+    public ResponseEntity<Users> updatePersonas(@PathVariable Integer id, @Validated @RequestBody Personas personas) {
         Optional<Personas> usuarioOpcional = personasService.findById(id);
         if (!usuarioOpcional.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }
-        personas.setSeq_persona(usuarioOpcional.get().getSeq_persona());
+        personas.setSeqpersona(usuarioOpcional.get().getSeqpersona());
         this.personasService.save(personas);
         return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")
 
-    public ResponseEntity<Void> deletePersonas(@PathVariable Long id) {
+    public ResponseEntity<Void> deletePersonas(@PathVariable Integer id) {
         personasService.deleteById(id);
         return ResponseEntity.noContent().build();
     }

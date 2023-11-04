@@ -24,7 +24,7 @@
 // @GetMapping("/{login}/{password}/{idrol}/{idmenu}")
 // public ResponseEntity<List<Procesos>> findProcesos(@PathVariable String
 // login, @PathVariable String password,
-// @PathVariable Long idrol, @PathVariable Long idmenu) {
+// @PathVariable Integer idrol, @PathVariable Integer idmenu) {
 // try {
 
 // List<Procesos> usuarios = procesosService.findByLoginAndPassword(login,
@@ -41,7 +41,7 @@
 // }
 // return new ResponseEntity<>(usuariosprocesos, HttpStatus.OK);
 // } catch (Exception e) {
-// return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+// return new ResponseEntity<>(HttpStatus.INTERNALSERVERERROR);
 // }
 // }
 

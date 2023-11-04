@@ -13,7 +13,7 @@
  * 
  * 
  * public interface PersonaAdmDTORepository extends JpaRepository<PersonaAdmDTO,
- * Long> {
+ * Integer> {
  * 
  * @Query("select e from PersonaAdmDTO p where concat(trim(nombre), trim(ap), trim(am)) like %:searchString% AND tipo=?1 AND estado=?2?"
  * ) List<PersonaAdmDTO> findBySearchString(@Param("searchString") String

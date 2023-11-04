@@ -13,7 +13,7 @@ public class RolesServiceImpl implements RolesService {
     @Autowired
     RolesRepository rolesRepo;
 
-    public List<Menus> getMenusByRoles(Long roleId) {
+    public List<Menus> getMenusByRoles(Integer roleId) {
         return rolesRepo.getMenusByRoles(roleId);
     }
 
@@ -31,11 +31,11 @@ public class RolesServiceImpl implements RolesService {
     // // return rolesRepo.findByLoginAndPassword(login, password);
     // // }
 
-    // public Optional<Roles> findById(Long id) {
+    // public Optional<Roles> findById(Integer id) {
     // return rolesRepo.findById(id);
     // }
 
-    // public void deleteById(Long id) {
+    // public void deleteById(Integer id) {
     // rolesRepo.deleteById(id);
     // }
 

@@ -4,7 +4,7 @@ VALUES
   ('Nombre del Usuario2', 'correo2@example.com', 'Masculino', 'Activo'),
   ('Richard','richard.sivila.rios@gmail.com','masculino','active');
 
-INSERT INTO "public".roles (id_rol,cod_estado, nombre)
+INSERT INTO "public".roles (idrol,codestado, nombre)
 VALUES 
   (1,1, 'Administrador'),
   (2,1, 'Técnico'),
@@ -14,7 +14,7 @@ VALUES
 
 -- Insertar datos en la tabla "public".personas
 
-INSERT INTO "public".personas (seq_persona, apellido_materno, apellido_paterno, cedula_identidad, cod_estado, cod_tipo, fotografia, nombres, telefono_celular)
+INSERT INTO "public".personas (seqpersona, apellidomaterno, apellidopaterno, cedulaidentidad, codestado, codtipo, fotografia, nombres, telefonocelular)
 VALUES 
   (1,'Pérez', 'González', '9876543210', 1, 'A', 'foto.jpg', 'Ana', '555-555-5556'),
   (2,'Rodríguez', 'Fernández', '5678901234', 1, 'A', 'foto.jpg', 'Pedro', '555-555-5557'),
@@ -25,7 +25,7 @@ VALUES
 
 -- Insertar datos en la tabla "public".usuarios
 
-INSERT INTO "public".usuarios (codu,cod_estado, usuario, contrasena, seq_persona)
+INSERT INTO "public".usuarios (codu,codestado, usuario, contrasena, seqpersona)
 VALUES 
   (1,1, 'admin', 'admin', 1),
   (2,1, 'tecnico1', 'tecnico1', 2),
@@ -35,16 +35,16 @@ VALUES
   (6,1, 'usuario3', 'usuario3', 6);
 
 
--- Insertar datos en la tabla "public".usuario_roles
-INSERT INTO "public".usuario_roles (id_rol, usuario)
+-- Insertar datos en la tabla "public".usuarioroles
+INSERT INTO "public".usuarioroles (idrol, usuario)
 VALUES 
   (1, 1),
   (2, 2),
   (3, 3),
   (4, 4);
 
--- Insertar datos en la tabla "public".solicitudes_servicio
-INSERT INTO "public".solicitudes_servicio (seq_solicitud_servicio, cod_estado, descripcion_problema, fecha, seq_persona_solicita)
+-- Insertar datos en la tabla "public".solicitudesservicio
+INSERT INTO "public".solicitudesservicio (seqsolicitudservicio, codestado, descripcionproblema, fecha, seqpersonasolicita)
 VALUES 
   (1,1, 'Problema en la computadora', '2023-09-25', 1),
   (2,1, 'Servidor caído', '2023-09-26', 2),
@@ -91,7 +91,7 @@ VALUES
   (4,5);
 
 -- Insertar datos en la tabla "public".fallas
-INSERT INTO "public".fallas (id_falla, cod_estado, nombre)
+INSERT INTO "public".fallas (idfalla, codestado, nombre)
 VALUES 
   (1, 1, 'Pantalla rota'),
   (2, 1, 'Problema de alimentación'),
@@ -102,7 +102,7 @@ VALUES
 
 -- Insertar datos en la tabla "public".activo
 
-INSERT INTO "public".activo (seq_activo, cod_estado, comentarios, id_etiqueta_fisica, marca, modelo, nombre)
+INSERT INTO "public".activo (seqactivo, codestado, comentarios, idetiquetafisica, marca, modelo, nombre)
 VALUES 
   (1,1, 'Computadora de prueba 1', 'ETIQ001', 'Dell', 'Inspiron', 'Computadora 1'),
   (2,1, 'Computadora de prueba 2', 'ETIQ002', 'HP', 'Pavilion', 'Computadora 2'),
@@ -110,8 +110,8 @@ VALUES
   (4,1, 'Servidor de base de datos', 'ETIQ004', 'HP', 'ProLiant', 'Servidor 1'),
   (5,1, 'Computadora de oficina', 'ETIQ005', 'Acer', 'Aspire', 'Computadora 3');
 
--- Insertar datos en la tabla "public".ordenes_trabajo
-INSERT INTO "public".ordenes_trabajo (seq_orden_trabajo, cod_atendido, cod_estado, cod_tipo_mantenimiento, fecha_emision, numero_orden_trabajo, ubicacion_activo, seq_persona_planificante, seq_solicitud_servicio)
+-- Insertar datos en la tabla "public".ordenestrabajo
+INSERT INTO "public".ordenestrabajo (seqordentrabajo, codatendido, codestado, codtipomantenimiento, fechaemision, numeroordentrabajo, ubicacionactivo, seqpersonaplanificante, seqsolicitudservicio)
 VALUES 
   (1, 0, 1, 'CM', '2023-09-25', 'OT-001', 'Oficina 1', 1, 1),
   (2, 0, 1, 'CM', '2023-09-26', 'OT-002', 'Sala de servidores', 2, 2),
@@ -119,8 +119,8 @@ VALUES
   (4, 0, 1, 'CM', '2023-09-28', 'OT-004', 'Oficina 3', 4, 4),
   (5, 0, 1, 'CM', '2023-09-29', 'OT-005', 'Oficina 4', 5, 5);
 
--- Insertar datos en la tabla "public".recepciones_activo
-INSERT INTO "public".recepciones_activo (seq_recepcion_activo, cod_estado, fecha, seq_activo, seq_persona_recepcionante, seq_solicitud_servicio)
+-- Insertar datos en la tabla "public".recepcionesactivo
+INSERT INTO "public".recepcionesactivo (seqrecepcionactivo, codestado, fecha, seqactivo, seqpersonarecepcionante, seqsolicitudservicio)
 VALUES 
   (1,1, '2023-09-25', 1, 1, 1),
   (2,1, '2023-09-26', 2, 2, 2),
@@ -128,8 +128,8 @@ VALUES
   (4,1, '2023-09-28', 4, 4, 4),
   (5,1, '2023-09-29', 5, 5, 5);
 
--- Insertar datos en la tabla "public".ordenes_trabajo_activo
-INSERT INTO "public".ordenes_trabajo_activo (seq_activo, seq_orden_trabajo)
+-- Insertar datos en la tabla "public".ordenestrabajoactivo
+INSERT INTO "public".ordenestrabajoactivo (seqactivo, seqordentrabajo)
 VALUES 
   (1, 1),
   (2, 2),
@@ -137,10 +137,10 @@ VALUES
   (4, 4),
   (5, 5);
 
--- Insertar datos en la tabla "public".mantenimientos_correctivos
-INSERT INTO "public".mantenimientos_correctivos (seq_mantenimiento_correctivo,cod_estado, cod_tipo_solucion, 
-												 comentario_deteccion_falla, comentarios, descripcion_causa, 
-												 descripcion_solucion, duracion, fecha_finalizacion, id_falla, seq_activo, seq_orden_trabajo)
+-- Insertar datos en la tabla "public".mantenimientoscorrectivos
+INSERT INTO "public".mantenimientoscorrectivos (seqmantenimientocorrectivo,codestado, codtiposolucion, 
+												 comentariodeteccionfalla, comentarios, descripcioncausa, 
+												 descripcionsolucion, duracion, fechafinalizacion, idfalla, seqactivo, seqordentrabajo)
 VALUES 
   (1,1, 'Reparación', 'Pantalla rota', 'Reemplazo de pantalla', 'Pantalla dañada', 'Se reemplazó la pantalla', '2 horas', '2023-09-25', 1, 1, 1),
   (2,1, 'Reparación', 'Problema de alimentación', 'Reemplazo de fuente de poder', 'Fuente de poder defectuosa', 'Se reemplazó la fuente de poder', '3 horas', '2023-09-25', 2, 2, 2),
@@ -148,8 +148,8 @@ VALUES
   (4,1, 'Reparación', 'Teclado dañado', 'Reemplazo de teclado', 'Teclado inoperable', 'Se reemplazó el teclado', '1.5 horas', '2023-09-25', 4, 4, 4),
   (5,1, 'Reparación', 'Problemas de red', 'Configuración de red', 'Problemas de conectividad', 'Se solucionaron los problemas de red', '2.5 horas', '2023-09-25', 5, 5, 5);
 
--- Insertar datos en la tabla "public".tecnicos_ejecutantes
-INSERT INTO "public".tecnicos_ejecutantes (seq_tecnico_ejecutante, cod_estado, cod_responsable, fecha_de_asignacion, seq_orden_trabajo, seq_persona_ejecutante)
+-- Insertar datos en la tabla "public".tecnicosejecutantes
+INSERT INTO "public".tecnicosejecutantes (seqtecnicoejecutante, codestado, codresponsable, fechadeasignacion, seqordentrabajo, seqpersonaejecutante)
 VALUES 
   (1,1, 0, '2023-09-25', 1, 1),
   (2,1, 0, '2023-09-26', 2, 2),
@@ -157,9 +157,9 @@ VALUES
   (4,1, 0, '2023-09-28', 4, 4),
   (5, 1, 0, '2023-09-29', 5, 5);
 
--- Insertar datos en la tabla "public".tareas_mant_inspeccion_cronologica
+-- Insertar datos en la tabla "public".tareasmantinspeccioncronologica
 
-INSERT INTO "public".tareas_mant_inspeccion_cronologica (seq_tarea_mant_inspeccion_cronologica, cod_ejecucion, cod_estado, descripcion, fecha, fotografia, hora, seq_mantenimiento_correctivo)
+INSERT INTO "public".tareasmantinspeccioncronologica (seqtareamantinspeccioncronologica, codejecucion, codestado, descripcion, fecha, fotografia, hora, seqmantenimientocorrectivo)
 VALUES 
   (1,'EJ-001', 1, 'Tarea 1', '2023-09-25', 'foto1.jpg', '12:30:00', 1),
   (2,'EJ-002', 1, 'Tarea 2', '2023-09-26', 'foto2.jpg', '13:30:00', 2),

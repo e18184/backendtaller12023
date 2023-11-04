@@ -8,9 +8,9 @@ import com.example.demo.taller1proyecto.modelo3.Users;
 import java.util.Optional;
 import java.util.List;
 
-public interface UsersRepository extends JpaRepository<Users, Long> {
+public interface UsersRepository extends JpaRepository<Users, Integer> {
 
-    Optional<Users> findById(Long id);
+    Optional<Users> findById(Integer id);
 
     List<Users> findByNameLike(String query);
 

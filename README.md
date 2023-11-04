@@ -18,7 +18,7 @@ import lombok.*;
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String first_name;
     private String email;
 
@@ -30,7 +30,7 @@ package com.example.demo.taller1proyecto.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.demo.taller1proyecto.modelo3.User;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
 }
 
@@ -46,9 +46,9 @@ public interface UserService {
 
     public User save(User user);
 
-    public Optional<User> findById(Long id);
+    public Optional<User> findById(Integer id);
 
-    public void deleteById(Long id);
+    public void deleteById(Integer id);
 
 }
 
@@ -79,12 +79,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User> findById(Long id) {
+    public Optional<User> findById(Integer id) {
         return userRepository.findById(id);
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         userRepository.deleteById(id);
     }
 
@@ -126,7 +126,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
+    public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User updatedUser) {
         User user = userService.findById(id).orElse(null);
         if (user == null) {
             return ResponseEntity.notFound().build();
@@ -137,7 +137,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         userService.deleteById(id);
         return ResponseEntity.noContent().build();
     }

@@ -33,12 +33,12 @@ public class PersonasServiceImpl implements PersonasService {
     // }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         personRepo.deleteById(id);
     }
 
     @Override
-    public Optional<Personas> findById(Long id) {
+    public Optional<Personas> findById(Integer id) {
         return personRepo.findById(id);
     }
 
@@ -46,9 +46,30 @@ public class PersonasServiceImpl implements PersonasService {
     public List<Personas> getPersonasByColumn(String column, String query) {
         query = "%" + query + "%";
         switch (column) {
+            // case "seqpersona":
+            // return personRepo.findBySeqpersonaLike(query);
+            // case "apellidopaterno":
+            // return personRepo.findByApellidopaternoLike(query);
+            // case "apellidomaterno":
+            // return personRepo.findByApellidomaternoLike(query);
             case "nombres":
                 System.out.println(personRepo.findByNombresLike(query));
                 return personRepo.findByNombresLike(query);
+            // case "nombres":
+            // System.out.println(personRepo.findByNombresLike(query));
+            // return personRepo.findByNombresLike(query);
+            // case "nombres":
+            // System.out.println(personRepo.findByNombresLike(query));
+            // return personRepo.findByNombresLike(query);
+            // case "nombres":
+            // System.out.println(personRepo.findByNombresLike(query));
+            // return personRepo.findByNombresLike(query);
+            // case "nombres":
+            // System.out.println(personRepo.findByNombresLike(query));
+            // return personRepo.findByNombresLike(query);
+            // case "nombres":
+            // System.out.println(personRepo.findByNombresLike(query));
+            // return personRepo.findByNombresLike(query);
             default:
                 return Collections.emptyList(); // Devuelve una lista vacía si no se proporciona una columna válida
         }

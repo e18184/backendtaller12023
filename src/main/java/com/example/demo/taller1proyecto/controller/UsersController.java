@@ -42,7 +42,7 @@ public class UsersController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Users> findById(@PathVariable Long id) {
+    public ResponseEntity<Users> findById(@PathVariable Integer id) {
         try {
             Optional<Users> userOptional = userService.findById(id);
 
@@ -61,9 +61,9 @@ public class UsersController {
     @PostMapping
     public ResponseEntity<Users> createUser(@RequestBody Users user) {
         try {
-            // Long maxId = userService.findMaxId().longValue();
+            // Integer maxId = userService.findMaxId().longValue();
             // System.out.println("id max es: " + maxId);
-            // Long newId = (maxId != null) ? maxId + 1 : 1;
+            // Integer newId = (maxId != null) ? maxId + 1 : 1;
             // System.out.println("newId es: " + newId);
             // user.setId(newId);
             userService.save(user);
@@ -74,7 +74,7 @@ public class UsersController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Users> updateUser(@PathVariable Long id, @Validated @RequestBody Users user) {
+    public ResponseEntity<Users> updateUser(@PathVariable Integer id, @Validated @RequestBody Users user) {
         Optional<Users> usuarioOpcional = userService.findById(id);
         if (!usuarioOpcional.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
@@ -85,7 +85,7 @@ public class UsersController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
         userService.deleteById(id);
         return ResponseEntity.noContent().build();
     }

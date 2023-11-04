@@ -66,12 +66,12 @@
 // // null, "67382875", "1", 1,
 // // null, null, null, null, null);
 
-// // // Personas(int seq_persona, String cedula_identidad, String nombres,
+// // // Personas(int seqpersona, String cedulaidentidad, String nombres,
 // String
-// // // apellido_pateno, String apellido_materno, String fotografia, String
-// // // telefono_celular, String cod_tipo, int cod_estado, Set ordenes_trabajo,
+// // // apellidopateno, String apellidomaterno, String fotografia, String
+// // // telefonocelular, String codtipo, int codestado, Set ordenestrabajo,
 // // Set
-// // // recepciones_activo, Set solicitudes_servicio, Set tecnicos_ejecutantes,
+// // // recepcionesactivo, Set solicitudesservicio, Set tecnicosejecutantes,
 // // Set
 // // // usuarios)
 
@@ -166,7 +166,7 @@
 // // */
 // // try {
 
-// // if (usuariosService.usuariosFindById(Long.valueOf(usuario2.getId()))) {
+// // if (usuariosService.usuariosFindById(Integer.valueOf(usuario2.getId()))) {
 // // System.out.println("existe el usuario");
 
 // // } else {

@@ -6,7 +6,7 @@ import com.example.demo.taller1proyecto.modelo3.Menus;
 
 public interface RolesService {
 
-    List<Menus> getMenusByRoles(Long roleId);
+    List<Menus> getMenusByRoles(Integer roleId);
 
     // void save(Roles roles);
 
@@ -14,9 +14,9 @@ public interface RolesService {
 
     // // public List<Roles> findByLoginAndPassword(String login, String password);
 
-    // Optional<Roles> findById(Long id);
+    // Optional<Roles> findById(Integer id);
 
-    // public void deleteById(Long id);
+    // public void deleteById(Integer id);
 
     // public List<Roles> findByUsuarios(Usuarios usuarios);
 

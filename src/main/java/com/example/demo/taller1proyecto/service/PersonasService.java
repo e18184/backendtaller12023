@@ -13,9 +13,9 @@ public interface PersonasService {
 
     public List<Personas> findAll(Sort sort);
 
-    public void deleteById(Long id);
+    public void deleteById(Integer id);
 
-    public Optional<Personas> findById(Long id);
+    public Optional<Personas> findById(Integer id);
 
     public List<Personas> getPersonasByColumn(String column, String query);
 
